@@ -7,8 +7,11 @@ results are committed next to the code that produced them.
 
 ## The short version
 
-Four models were tested across the first three, from expensive to cheap: `claude-sonnet-5`, `gemini-3.6-flash`,
-`glm-5.2`, and `deepseek-v4-flash`. The cheapest costs about 1/37th of the most expensive.
+Four models were tested across the first three, from expensive to cheap: `claude-sonnet-5`,
+`gemini-3.6-flash`, `glm-5.2`, and `deepseek-v4-flash`. How much cheaper the cheapest one works out
+to be depends on the task, and it is never one number: across these tests it cost between **21x and
+45x** less than the dearest model, because what a task costs depends on how many turns it takes,
+not only on the price per token.
 
 **There is no single "best model." It depends entirely on the job.**
 
