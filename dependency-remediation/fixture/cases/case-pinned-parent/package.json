@@ -1,0 +1,8 @@
+{
+  "name": "case-pinned-parent",
+  "private": true,
+  "version": "1.0.0",
+  "dependencies": {
+    "postcss": "8.4.30"
+  }
+}

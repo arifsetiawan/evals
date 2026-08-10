@@ -1,0 +1,45 @@
+{
+  "label": "deepseek/deepseek-v4-flash trial 1",
+  "model": "deepseek/deepseek-v4-flash",
+  "trial": 1,
+  "costUsd": 0.0007886844,
+  "latencyMs": 26258,
+  "error": null,
+  "finishReason": "stop",
+  "meta": {
+    "summary": "{\n  \"cards\": [\n    {\n      \"category\": \"reliability\",\n      \"title\": \"Error Spike in Hour 14\",\n      \"detail\": \"At hour 14, errors surged to 1,460 (15.8% of 9,225 requests) compared to 31 errors (0.35%) in other hours. This represents 67% of all errors in the week.\"\n    },\n    {\n      \"category\": \"cost\",\n      \"title\": \"caller-07 Cost Anomaly\",\n      \"detail\": \"caller-07 spent $174.12 on 1,180 req",
+    "publish_result": "not_configured"
+  },
+  "cards": [
+    {
+      "category": "reliability",
+      "title": "Error Spike in Hour 14",
+      "detail": "At hour 14, errors surged to 1,460 (15.8% of 9,225 requests) compared to 31 errors (0.35%) in other hours. This represents 67% of all errors in the week."
+    },
+    {
+      "category": "cost",
+      "title": "caller-07 Cost Anomaly",
+      "detail": "caller-07 spent $174.12 on 1,180 requests, a cost per request of $0.148, which is 9 times the overall average of $0.016. Its cache hit rate is only 4%."
+    },
+    {
+      "category": "reliability",
+      "title": "Model epsilon 100% Error Rate",
+      "detail": "Model epsilon processed 40 requests, all of which returned errors, with zero spend. This suggests the model may be misconfigured or unavailable."
+    },
+    {
+      "category": "usage",
+      "title": "caller-01 Dominates Usage",
+      "detail": "caller-01 made 105,832 requests (51.6% of all requests) and accounted for $1,643.86 (49% of spend). Its errors were 952 (44% of total errors)."
+    },
+    {
+      "category": "performance",
+      "title": "Model-alpha Latency Highest",
+      "detail": "Model-alpha has the highest p95 latency at 2,454 ms, while other models range from 1,310 ms to 2,229 ms. This could impact user experience for heavy users."
+    },
+    {
+      "category": "usage",
+      "title": "Low Cache Hit Rates in Many Callers",
+      "detail": "Nine callers have cache hit rates below 10%, with the lowest at 3.7% (caller-21) and 4% (caller-07). This drives higher costs and slower responses."
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "case-34e0b1f2",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "vitest": "^4.0.0"
+  }
+}

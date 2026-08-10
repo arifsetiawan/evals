@@ -1,0 +1,45 @@
+{
+  "label": "z-ai/glm-5.2 trial 2",
+  "model": "z-ai/glm-5.2",
+  "trial": 2,
+  "costUsd": 0.00368128,
+  "latencyMs": 14794,
+  "error": null,
+  "finishReason": "stop",
+  "meta": {
+    "summary": "```json\n{\"cards\": [\n  {\"category\": \"reliability\", \"title\": \"Hour 14 concentrated 67% of all weekly errors\", \"detail\": \"Hour 14 saw 1460 errors out of 9225 requests (15.8% error rate), while every other hour had 31 errors out of 8899 requests (0.35%). This single hour accounts for 1460 of the 2169 total errors.\"},\n  {\"category\": \"reliability\", \"title\": \"model-epsilon is failing 100% of requests\", \"",
+    "publish_result": "not_configured"
+  },
+  "cards": [
+    {
+      "category": "reliability",
+      "title": "Hour 14 concentrated 67% of all weekly errors",
+      "detail": "Hour 14 saw 1460 errors out of 9225 requests (15.8% error rate), while every other hour had 31 errors out of 8899 requests (0.35%). This single hour accounts for 1460 of the 2169 total errors."
+    },
+    {
+      "category": "reliability",
+      "title": "model-epsilon is failing 100% of requests",
+      "detail": "model-epsilon returned errors on all 40 of its 40 requests with $0 spend, indicating the model is completely non-functional and should be disabled or investigated."
+    },
+    {
+      "category": "cost",
+      "title": "caller-01 drives half of all traffic and spend",
+      "detail": "caller-01 accounts for 105,832 of 204,993 requests (51.6%) and $1,643.86 of $3,354.82 spend (49.0%). It also produced 952 of 2169 errors (43.9%), making it the single largest source of cost and failures."
+    },
+    {
+      "category": "cost",
+      "title": "caller-07 costs 9x the platform average per request",
+      "detail": "caller-07 spent $174.12 on 1180 requests ($0.1475/request) versus the platform average of $0.0164/request, with a cache hit rate of only 0.04 compared to 0.87 for well-cached callers."
+    },
+    {
+      "category": "performance",
+      "title": "model-alpha has the highest p95 latency",
+      "detail": "model-alpha's p95 latency is 2454ms, the slowest of any model with significant volume (86,080 requests). model-gamma is fastest at 1310ms p95."
+    },
+    {
+      "category": "usage",
+      "title": "Hour 3 traffic collapses to 2 requests",
+      "detail": "Every hour except hour 3 received approximately 8899 requests, but hour 3 had only 2 requests (both errored). This suggests a scheduled maintenance window or a systematic outage during that hour."
+    }
+  ]
+}

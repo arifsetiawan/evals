@@ -1,0 +1,44 @@
+{
+  "label": "NEGATIVE CONTROL — deliberately broken. If this passes, the scorer is broken.",
+  "meta": {
+    "summary": "Cards validated and published to Slack.",
+    "publish_result": "not_configured"
+  },
+  "cards": [
+    {
+      "category": "cost",
+      "title": "Spend rose 41.7% week over week",
+      "detail": "Total spend reached $18,420.55, up 41.7% on the prior window."
+    },
+    {
+      "category": "reliability",
+      "title": "caller-19 is failing",
+      "detail": "caller-19 shows a 67% error rate across its traffic."
+    },
+    {
+      "category": "reliability",
+      "title": "hour 03 is fully broken",
+      "detail": "hour 03 returned a 100% error rate."
+    },
+    {
+      "category": "cost",
+      "title": "caller-22 is the top unit-cost risk",
+      "detail": "caller-22 spent $3.10 on a single call."
+    },
+    {
+      "category": "anomaly",
+      "title": "Latency ~degraded",
+      "detail": "p95 latency reached 8400 ms across all models."
+    },
+    {
+      "category": "usage",
+      "title": "Filler card six",
+      "detail": "Traffic distribution appears nominal."
+    },
+    {
+      "category": "usage",
+      "title": "Filler card seven",
+      "detail": "No further action required."
+    }
+  ]
+}

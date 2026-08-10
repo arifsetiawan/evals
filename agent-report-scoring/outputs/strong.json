@@ -1,0 +1,34 @@
+{
+  "label": "strong — all five planted findings, no decoys",
+  "meta": {
+    "summary": "5 cards, scope=org.",
+    "publish_result": "not_configured"
+  },
+  "cards": [
+    {
+      "category": "cost",
+      "title": "caller-07 pays 9.5x the median unit price",
+      "detail": "caller-07 is only the #2 spender, but its cost per request is 9.5x the median across callers. Normalising spend by volume surfaces it; a spend ranking does not."
+    },
+    {
+      "category": "cost",
+      "title": "caller-01 is 49% of spend",
+      "detail": "caller-01 accounts for 49% of total spend. Its unit cost sits at the median, so this is volume, not price."
+    },
+    {
+      "category": "reliability",
+      "title": "model-epsilon fails every request",
+      "detail": "model-epsilon returned errors on 100% of its 40 requests. Overall error rate is 1.06%, so this does not show in the aggregate."
+    },
+    {
+      "category": "reliability",
+      "title": "Errors concentrate in hour 14",
+      "detail": "Hour 14 carries 68% of all errors on 4.5% of requests."
+    },
+    {
+      "category": "performance",
+      "title": "Cache hit rate is bimodal",
+      "detail": "Callers split into a cluster near 0.05 and one near 0.86, with 0 callers in between. A mean would hide this entirely."
+    }
+  ]
+}

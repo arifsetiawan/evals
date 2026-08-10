@@ -1,0 +1,8 @@
+{
+  "name": "case-transitive-lockfile",
+  "private": true,
+  "version": "1.0.0",
+  "dependencies": {
+    "postcss": "^8.4.30"
+  }
+}

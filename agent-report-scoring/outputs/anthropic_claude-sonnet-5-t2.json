@@ -1,0 +1,45 @@
+{
+  "label": "anthropic/claude-sonnet-5 trial 2",
+  "model": "anthropic/claude-sonnet-5",
+  "trial": 2,
+  "costUsd": 0.028956,
+  "latencyMs": 23819,
+  "error": null,
+  "finishReason": "stop",
+  "meta": {
+    "summary": "{\"cards\": [{\"category\": \"reliability\", \"title\": \"Hour-14 error spike drives most of the week's failures\", \"detail\": \"At hour 14, 1460 of 9225 requests failed (15.8% error rate) versus a baseline of about 31 errors per 8899 requests (0.35%) in every other hour; this single hour accounts for 1460 of the week's 2169 total errors (67%).\"}, {\"category\": \"reliability\", \"title\": \"Near-total outage at hou",
+    "publish_result": "not_configured"
+  },
+  "cards": [
+    {
+      "category": "reliability",
+      "title": "Hour-14 error spike drives most of the week's failures",
+      "detail": "At hour 14, 1460 of 9225 requests failed (15.8% error rate) versus a baseline of about 31 errors per 8899 requests (0.35%) in every other hour; this single hour accounts for 1460 of the week's 2169 total errors (67%)."
+    },
+    {
+      "category": "reliability",
+      "title": "Near-total outage at hour 3",
+      "detail": "Hour 3 logged only 2 requests, both of which errored, while every other hour averaged 8899 requests — consistent with a short full outage rather than a load dip."
+    },
+    {
+      "category": "reliability",
+      "title": "model-epsilon is failing on every call",
+      "detail": "model-epsilon shows 40 errors out of 40 requests (100% error rate) and $0 spend, indicating the model is non-functional for the whole window despite low volume."
+    },
+    {
+      "category": "cost",
+      "title": "caller-01 concentrates over half of all traffic and spend",
+      "detail": "caller-01 made 105,832 of 204,993 requests (51.6%) and $1643.86 of $3354.82 spend (49.0%), far ahead of any other caller."
+    },
+    {
+      "category": "performance",
+      "title": "Cache hit rates split into two distinct clusters",
+      "detail": "About half the callers cache well (e.g. caller-01 87%, caller-06 88.8%, caller-14 87.5%) while others barely cache at all (caller-07 4%, caller-21 3.7%, caller-19 and caller-22 at 0%), suggesting caching is misconfigured or disabled for the low group."
+    },
+    {
+      "category": "cost",
+      "title": "caller-07 pays far more per request than the fleet average",
+      "detail": "caller-07 spent $174.12 over 1180 requests ($0.148/request), about 9x the fleet-wide average of $0.0164/request ($3354.82 over 204,993 requests)."
+    }
+  ]
+}

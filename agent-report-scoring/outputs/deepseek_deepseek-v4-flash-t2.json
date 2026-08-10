@@ -1,0 +1,45 @@
+{
+  "label": "deepseek/deepseek-v4-flash trial 2",
+  "model": "deepseek/deepseek-v4-flash",
+  "trial": 2,
+  "costUsd": 0.000809896,
+  "latencyMs": 19632,
+  "error": null,
+  "finishReason": "stop",
+  "meta": {
+    "summary": "{\n  \"cards\": [\n    {\n      \"category\": \"reliability\",\n      \"title\": \"Hour 14 error spike\",\n      \"detail\": \"Hour 14 recorded 1,460 errors from 9,225 requests (15.8% error rate), compared to an average of 31 errors per hour in other hours (0.35%). This spike requires investigation.\"\n    },\n    {\n      \"category\": \"reliability\",\n      \"title\": \"Model epsilon 100% failure\",\n      \"detail\": \"Model ep",
+    "publish_result": "not_configured"
+  },
+  "cards": [
+    {
+      "category": "reliability",
+      "title": "Hour 14 error spike",
+      "detail": "Hour 14 recorded 1,460 errors from 9,225 requests (15.8% error rate), compared to an average of 31 errors per hour in other hours (0.35%). This spike requires investigation."
+    },
+    {
+      "category": "reliability",
+      "title": "Model epsilon 100% failure",
+      "detail": "Model epsilon had 40 requests and 40 errors, a 100% error rate. This model may be misconfigured or unavailable."
+    },
+    {
+      "category": "cost",
+      "title": "Caller-07 high cost per request",
+      "detail": "Caller-07 spent $174.12 on 1,180 requests, an average of $0.148 per request, which is 9x the overall average of $0.016. Review its model selection or usage."
+    },
+    {
+      "category": "performance",
+      "title": "Low cache hit rates for several callers",
+      "detail": "Nine callers have cache hit rates below 10% (e.g., caller-03 at 7.7%, caller-07 at 4.0%, caller-21 at 3.7%). Optimizing caching could reduce costs and latency."
+    },
+    {
+      "category": "usage",
+      "title": "Caller-01 dominates traffic",
+      "detail": "Caller-01 accounts for 105,832 requests (51.6% of total) and $1,643.86 spend (49.0%). Its performance is critical to overall system health."
+    },
+    {
+      "category": "cost",
+      "title": "Caller-22 outlier single request cost",
+      "detail": "Caller-22 made a single request costing $3.10, over 180 times the average cost per request. This may indicate a billing or configuration error."
+    }
+  ]
+}

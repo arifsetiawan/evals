@@ -1,0 +1,40 @@
+{
+  "label": "google/gemini-3.6-flash trial 1",
+  "model": "google/gemini-3.6-flash",
+  "trial": 1,
+  "costUsd": 0.0344565,
+  "latencyMs": 17263,
+  "error": null,
+  "finishReason": "stop",
+  "meta": {
+    "summary": "{\"cards\": [{\"category\": \"reliability\", \"title\": \"Severe error rate spike during hour 14\", \"detail\": \"Hour 14 recorded 1,460 errors out of 9,225 requests (15.8% error rate), compared to a baseline of 31 errors per hour. This hour accounts for 1,460 of the 2,169 total errors recorded across the week.\"}, {\"category\": \"usage\", \"title\": \"Caller-01 drives half of all traffic and spend\", \"detail\": \"Calle",
+    "publish_result": "not_configured"
+  },
+  "cards": [
+    {
+      "category": "reliability",
+      "title": "Severe error rate spike during hour 14",
+      "detail": "Hour 14 recorded 1,460 errors out of 9,225 requests (15.8% error rate), compared to a baseline of 31 errors per hour. This hour accounts for 1,460 of the 2,169 total errors recorded across the week."
+    },
+    {
+      "category": "usage",
+      "title": "Caller-01 drives half of all traffic and spend",
+      "detail": "Caller-01 generated 105,832 requests (51.6% of overall volume) and $1,643.86 in spend (49.0% of total spend)."
+    },
+    {
+      "category": "cost",
+      "title": "Caller-07 shows disproportionately high cost per request",
+      "detail": "Caller-07 incurred $174.12 in spend across 1,180 requests, averaging $0.148 per request compared to the overall average of $0.016 per request."
+    },
+    {
+      "category": "performance",
+      "title": "Low cache hit rates across multiple high-volume callers",
+      "detail": "Several callers have cache hit rates below 10%, including caller-03 (7.7% over 7,767 requests), caller-13 (8.9% over 7,351 requests), and caller-17 (6.2% over 7,469 requests)."
+    },
+    {
+      "category": "performance",
+      "title": "Model-alpha experiences highest p95 latency",
+      "detail": "Model-alpha recorded a p95 latency of 2,454 ms across 86,080 requests, compared to 1,310 ms for model-gamma across 36,892 requests."
+    }
+  ]
+}

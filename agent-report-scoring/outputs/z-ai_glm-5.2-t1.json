@@ -1,0 +1,45 @@
+{
+  "label": "z-ai/glm-5.2 trial 1",
+  "model": "z-ai/glm-5.2",
+  "trial": 1,
+  "costUsd": 0.0094885,
+  "latencyMs": 31949,
+  "error": null,
+  "finishReason": "stop",
+  "meta": {
+    "summary": "```json\n{\"cards\": [\n  {\n    \"category\": \"reliability\",\n    \"title\": \"Hour 14 produced 67% of all weekly errors\",\n    \"detail\": \"Hour 14 saw 1460 errors out of 9225 requests, while every other hour had 31 errors out of 8899 requests. This single hour accounts for 1460 of the 2169 total errors (67.3%), indicating a transient outage or incident.\"\n  },\n  {\n    \"category\": \"reliability\",\n    \"title\": \"",
+    "publish_result": "not_configured"
+  },
+  "cards": [
+    {
+      "category": "reliability",
+      "title": "Hour 14 produced 67% of all weekly errors",
+      "detail": "Hour 14 saw 1460 errors out of 9225 requests, while every other hour had 31 errors out of 8899 requests. This single hour accounts for 1460 of the 2169 total errors (67.3%), indicating a transient outage or incident."
+    },
+    {
+      "category": "reliability",
+      "title": "model-epsilon has a 100% failure rate",
+      "detail": "model-epsilon received 40 requests and returned 40 errors with zero spend, meaning every single call failed. This model is non-functional and should be disabled or investigated before any traffic is routed to it."
+    },
+    {
+      "category": "usage",
+      "title": "caller-01 accounts for over half of all traffic",
+      "detail": "caller-01 made 105832 of 204993 total requests (51.6%) and spent $1643.86 of $3354.82 (49.0%). It also generated 952 of 2169 errors (43.9%). This level of concentration creates dependency risk."
+    },
+    {
+      "category": "cost",
+      "title": "caller-07 costs 9x more per request than the average",
+      "detail": "caller-07 spent $174.12 on 1180 requests, or $0.1475 per request, compared to the overall average of $0.0164 per request. Its cache hit rate of 0.04 is the lowest of any caller, likely driving the elevated cost."
+    },
+    {
+      "category": "performance",
+      "title": "model-alpha has the highest p95 latency at 2454ms",
+      "detail": "model-alpha's p95 latency of 2454ms exceeds model-beta (2229ms), model-delta (1689ms), and model-gamma (1310ms). It also carries the largest share of traffic at 86080 requests (42.0%), so its latency impacts the most users."
+    },
+    {
+      "category": "cost",
+      "title": "Ten callers have cache hit rates below 0.09",
+      "detail": "Callers 03, 05, 07, 09, 11, 13, 15, 17, 21, and 23 all have cache hit rates between 0.037 and 0.089, while other callers achieve rates around 0.87. These ten callers represent 44991 requests (21.9% of total volume) and $849.66 in spend (25.3%)."
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "_note": "Models under test. Adding one is an entry here, not a code change. Every id must exist in harness/pricing/catalog.json — refresh that with harness/pricing/fetch.mjs after adding.",
+  "_brackets": "Brackets are drawn from modelled cost per run at the OBSERVED token mix (96% cache reads), not from headline in/out pricing, which describes a different workload. The boundary sits in a natural 1.5x gap in the data rather than at a round number.",
+  "scaffolds": {
+    "pi": {
+      "description": "Neutral coding agent (@earendil-works/pi-coding-agent) driving every model over OpenRouter. The control scaffold for experiment A — the only one that spans all providers, so it is the only one that can isolate the model.",
+      "provider": "openrouter",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    },
+    "claude-code": {
+      "description": "Anthropic's own agent scaffold via the `claude` CLI. Anthropic models only, so it cannot serve experiment A. Kept for experiment B, where the model is held fixed and the scaffold varies.",
+      "provider": "anthropic",
+      "models_supported": [
+        "anthropic/claude-sonnet-5"
+      ]
+    }
+  },
+  "experiments": {
+    "A-models": {
+      "question": "Which model is better at this task?",
+      "holds_fixed": "scaffold (pi)",
+      "varies": "model",
+      "models": "all"
+    },
+    "B-scaffold": {
+      "question": "How much of a vendor's coding performance is the model versus their own scaffold?",
+      "holds_fixed": "model (anthropic/claude-sonnet-5)",
+      "varies": "scaffold",
+      "scaffolds": [
+        "pi",
+        "claude-code"
+      ]
+    }
+  },
+  "models": [
+    {
+      "id": "moonshotai/kimi-k3",
+      "bracket": "frontier",
+      "enabled": false,
+      "disabled_reason": "Only model dearer than Sonnet (1.26x). Answers a secondary question — does paying more help — not the primary one."
+    },
+    {
+      "id": "anthropic/claude-sonnet-5",
+      "bracket": "frontier",
+      "enabled": true,
+      "note": "Frontier anchor, and the fixed model for experiment B — the only model both scaffolds can drive."
+    },
+    {
+      "id": "openai/gpt-5.6-terra",
+      "bracket": "frontier",
+      "enabled": false,
+      "disabled_reason": "Frontier slot already covered by Sonnet and gemini-flash; adds a price cliff that complicates attribution."
+    },
+    {
+      "id": "google/gemini-3.6-flash",
+      "bracket": "frontier",
+      "enabled": true,
+      "note": "Sits on the bracket boundary at ~0.5x Sonnet. The most informative single point: if it holds up, the frontier bracket is hard to justify."
+    },
+    {
+      "id": "z-ai/glm-5.2",
+      "bracket": "economy",
+      "enabled": true,
+      "note": "Top of the economy bracket. Where the cheap tier is most likely to still be adequate."
+    },
+    {
+      "id": "openai/gpt-5.6-luna",
+      "bracket": "economy",
+      "enabled": false,
+      "disabled_reason": "Economy slot covered by glm-5.2 and deepseek-flash; same long-context re-pricing complication."
+    },
+    {
+      "id": "deepseek/deepseek-v4-pro",
+      "bracket": "economy",
+      "enabled": false,
+      "disabled_reason": "Modelled cost is within 6% of deepseek-v4-flash ($0.056 vs $0.053) — same family, same price band, redundant for a first pass."
+    },
+    {
+      "id": "deepseek/deepseek-v4-flash",
+      "bracket": "economy",
+      "enabled": true,
+      "note": "Economy floor, ~18x cheaper than Sonnet. Establishes where quality actually collapses."
+    }
+  ],
+  "defaults": {
+    "trials": 3,
+    "maxTurns": 60,
+    "maxBudgetUsdPerRun": 8
+  },
+  "_reduced": "Reduced to four: one representative per price band, no two from the same family. Disabled entries are kept with their reason so the selection is visible rather than implied — a suite that quietly drops models reads as coverage it does not have."
+}

@@ -1,0 +1,45 @@
+{
+  "label": "anthropic/claude-sonnet-5 trial 1",
+  "model": "anthropic/claude-sonnet-5",
+  "trial": 1,
+  "costUsd": 0.031456,
+  "latencyMs": 27900,
+  "error": null,
+  "finishReason": "stop",
+  "meta": {
+    "summary": "```json\n{\"cards\": [\n  {\"category\": \"reliability\", \"title\": \"Massive error spike at hour 14\", \"detail\": \"Hour 14 recorded 1460 errors out of 9225 requests (15.8% error rate), compared to roughly 31 errors per 8899 requests (0.35%) in every other normal hour. This single hour accounts for the large majority of the week's 2169 total errors.\"},\n  {\"category\": \"reliability\", \"title\": \"Near-total outage",
+    "publish_result": "not_configured"
+  },
+  "cards": [
+    {
+      "category": "reliability",
+      "title": "Massive error spike at hour 14",
+      "detail": "Hour 14 recorded 1460 errors out of 9225 requests (15.8% error rate), compared to roughly 31 errors per 8899 requests (0.35%) in every other normal hour. This single hour accounts for the large majority of the week's 2169 total errors."
+    },
+    {
+      "category": "reliability",
+      "title": "Near-total outage at hour 3",
+      "detail": "Hour 3 shows only 2 requests total, both of which errored, versus approximately 8899 requests in every other hour of the week, indicating the API was effectively down during that hour."
+    },
+    {
+      "category": "reliability",
+      "title": "model-epsilon failing on every call",
+      "detail": "model-epsilon logged 40 requests and 40 errors (100% failure rate) with $0 spend recorded, suggesting calls to this model are failing before completion or billing."
+    },
+    {
+      "category": "cost",
+      "title": "caller-01 drives half of spend and traffic",
+      "detail": "caller-01 made 105832 of 204993 requests (51.6%) and accounted for $1643.86 of $3354.82 total spend (49%), making it by far the largest cost and volume driver."
+    },
+    {
+      "category": "cost",
+      "title": "caller-07 pays far more per request with poor caching",
+      "detail": "caller-07 spent $174.12 over 1180 requests ($0.148/request), about 9.5x caller-01's rate of $0.0155/request, while its cache hit rate is only 0.04 versus caller-01's 0.87."
+    },
+    {
+      "category": "usage",
+      "title": "Cache hit rates split into two distinct groups",
+      "detail": "About half the callers (e.g. caller-01 0.87, caller-04 0.872, caller-06 0.888, caller-18 0.823) cluster near 84-89% cache hits, while the other half (e.g. caller-03 0.077, caller-05 0.081, caller-07 0.04, caller-21 0.037) sit near 4-9%, pointing to inconsistent cache usage across caller types."
+    }
+  ]
+}

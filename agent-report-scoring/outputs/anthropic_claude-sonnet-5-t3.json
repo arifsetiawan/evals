@@ -1,0 +1,45 @@
+{
+  "label": "anthropic/claude-sonnet-5 trial 3",
+  "model": "anthropic/claude-sonnet-5",
+  "trial": 3,
+  "costUsd": 0.030306,
+  "latencyMs": 24954,
+  "error": null,
+  "finishReason": "stop",
+  "meta": {
+    "summary": "{\"cards\": [{\"category\": \"reliability\", \"title\": \"Hour 14 error spike\", \"detail\": \"Hour 14 logged 1460 errors out of 9225 requests (15.8% error rate), versus about 31 errors per 8899 requests (0.35%) in every other hour of the week.\"}, {\"category\": \"reliability\", \"title\": \"Hour 3 traffic gap\", \"detail\": \"Hour 3 recorded only 2 requests, both of which errored, compared to roughly 8899 requests seen ",
+    "publish_result": "not_configured"
+  },
+  "cards": [
+    {
+      "category": "reliability",
+      "title": "Hour 14 error spike",
+      "detail": "Hour 14 logged 1460 errors out of 9225 requests (15.8% error rate), versus about 31 errors per 8899 requests (0.35%) in every other hour of the week."
+    },
+    {
+      "category": "reliability",
+      "title": "Hour 3 traffic gap",
+      "detail": "Hour 3 recorded only 2 requests, both of which errored, compared to roughly 8899 requests seen in every other hour - consistent with an outage or a data collection gap."
+    },
+    {
+      "category": "reliability",
+      "title": "model-epsilon fully broken",
+      "detail": "model-epsilon shows 40 requests and 40 errors, a 100% failure rate, with $0 spend recorded, indicating a non-functional integration that isn't even generating billable traffic."
+    },
+    {
+      "category": "cost",
+      "title": "caller-07 has an outsized per-request cost",
+      "detail": "caller-07 spent $174.12 across 1180 requests ($0.148/request), roughly 9-10x the rate of caller-01 ($1643.86 over 105832 requests, $0.016/request) and most other callers."
+    },
+    {
+      "category": "usage",
+      "title": "caller-01 concentrates traffic and spend",
+      "detail": "caller-01 alone accounts for 105832 of 204993 requests (51.6% of total) and $1643.86 of $3354.82 spend (49% of total)."
+    },
+    {
+      "category": "performance",
+      "title": "Cache hit rates split into two clear groups",
+      "detail": "12 of 24 callers show cache hit rates below 0.09 (e.g., caller-07 0.04, caller-21 0.037, caller-11 0.055), while the remaining callers sit between 0.82 and 0.89, pointing to inconsistent cache configuration across callers."
+    }
+  ]
+}

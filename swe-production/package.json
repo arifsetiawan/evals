@@ -1,0 +1,20 @@
+{
+  "name": "swe-production",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "SWE-bench-style eval: coding agents against real bugfix commits and their tests",
+  "scripts": {
+    "extract": "node harness/extract.mjs",
+    "run": "node harness/run.mjs",
+    "report": "node analysis/report.mjs",
+    "smoke:pi-tools": "node harness/smoke/pi-tools.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@earendil-works/pi-ai": "^0.74.2",
+    "@earendil-works/pi-coding-agent": "^0.74.2"
+  }
+}

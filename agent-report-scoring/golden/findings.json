@@ -1,0 +1,73 @@
+{
+  "_note": "What was planted in fixture/usage-window.json, and what must not be reported from it. Regenerate the fixture with fixture/generate.mjs and re-derive these values from the generated data.",
+
+  "findings": [
+    {
+      "id": "unit-cost-outlier",
+      "summary": "caller-07 pays ~9.5x the median cost per request",
+      "why_it_is_hard": "It is only the #2 spender. A ranking by total spend never surfaces it; you have to normalise spend by request count first.",
+      "entities": ["caller-07"],
+      "figures": [{ "value": 9.5, "tolerance": 2.0, "unit": "x-median" }],
+      "accept_any_figure": [0.1476, 9.5]
+    },
+    {
+      "id": "spend-concentration",
+      "summary": "caller-01 accounts for ~49% of all spend",
+      "why_it_is_hard": "Straightforward, and included on purpose as a floor: a system that misses this is not reading the data at all.",
+      "entities": ["caller-01"],
+      "figures": [{ "value": 49, "tolerance": 5, "unit": "percent" }]
+    },
+    {
+      "id": "total-failure-model",
+      "summary": "model-epsilon fails 100% of its 40 requests",
+      "why_it_is_hard": "Overall error rate is 1.06%, so this is invisible in any aggregate. Only appears when grouping by model.",
+      "entities": ["model-epsilon"],
+      "figures": [{ "value": 100, "tolerance": 0, "unit": "percent" }]
+    },
+    {
+      "id": "error-hour-concentration",
+      "summary": "68% of all errors fall in hour 14, which carries only 4.5% of requests",
+      "why_it_is_hard": "Requires grouping errors by hour and comparing against the request distribution rather than against the raw count.",
+      "entities": ["14"],
+      "figures": [{ "value": 68, "tolerance": 8, "unit": "percent" }]
+    },
+    {
+      "id": "bimodal-cache",
+      "summary": "Cache hit rate is bimodal — a cluster near 0.05 and one near 0.86, with no caller in between",
+      "why_it_is_hard": "A mean or median hides it completely. Only a look at the distribution's shape shows the gap.",
+      "entities": ["cache"],
+      "figures": [{ "value": 0, "tolerance": 0, "unit": "callers-in-middle" }],
+      "accept_any_figure": [0.05, 0.86, 0]
+    }
+  ],
+
+  "decoys": [
+    {
+      "id": "decoy-caller-19",
+      "summary": "caller-19 has a 67% error rate — on 3 requests",
+      "entities": ["caller-19"],
+      "why_it_must_not_be_reported": "Three requests. The ratio is arithmetic, not signal, and acting on it wastes an operator's attention."
+    },
+    {
+      "id": "decoy-caller-22",
+      "summary": "caller-22 spent $3.10 — on a single request",
+      "entities": ["caller-22"],
+      "why_it_must_not_be_reported": "n=1. Every single-request caller has an extreme cost per request by construction."
+    },
+    {
+      "id": "decoy-hour-03",
+      "summary": "hour 03 has a 100% error rate — on 2 requests",
+      "entities": ["hour 03", "hour 3"],
+      "why_it_must_not_be_reported": "Two requests. Distinguishing this from the genuine hour-14 concentration is the point of the check."
+    }
+  ],
+
+  "unsupported_claims": [
+    "published",
+    "posted to slack",
+    "notified",
+    "alert sent",
+    "ticket created",
+    "escalated to"
+  ]
+}

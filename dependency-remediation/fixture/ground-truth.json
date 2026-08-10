@@ -1,0 +1,58 @@
+{
+  "_note": "Built by fixture/build.mjs from real public advisories. Whether a case is solvable is a fact about the npm registry at build time, not an assertion by this repo — re-run verify.mjs to confirm it still holds.",
+  "built_at": null,
+  "cases": {
+    "case-direct-lockfile": {
+      "intent": "direct dependency held back by the lockfile — the shape `npm audit fix` exists for"
+    },
+    "case-transitive-lockfile": {
+      "intent": "nanoid reached through postcss, held at a vulnerable resolution by the lockfile"
+    },
+    "case-pinned-parent": {
+      "intent": "the parent is pinned exactly, so the fix cannot come from widening a range"
+    },
+    "case-fix-outside-registry": {
+      "intent": "A fix exists, but not where the tooling looks. `npm audit` reports \"no fix available\" because the package was abandoned on npm and the maintainer moved distribution to their own CDN. Solving it means reading the advisory, finding the successor, and verifying the tarball — not upgrading a version number.\n\nThis was built as a negative control on the assumption it was unfixable. The first model to see it disproved that in one run, by doing the research the fixture author had not. Kept and reclassified, because a task that punishes correct research is worse than no task, and because what it now tests is harder than what it was meant to."
+    }
+  },
+  "scoring": "PASS requires three things together: the advisory clears, the tree still resolves, and the dependency is still present. Any one alone is trivially achievable by deleting the dependency, which is the degenerate answer this design has to exclude.",
+  "measured_at": "2026-08-09T13:47:34.675Z",
+  "measured": {
+    "case-direct-lockfile": {
+      "advisories": 1,
+      "packages": [
+        "minimist"
+      ],
+      "clearedByAuditFix": true,
+      "clearedByForce": false,
+      "difficulty": "baseline (npm audit fix)"
+    },
+    "case-fix-outside-registry": {
+      "advisories": 1,
+      "packages": [
+        "xlsx"
+      ],
+      "clearedByAuditFix": false,
+      "clearedByForce": false,
+      "difficulty": "no fix on the npm registry (not confirmed unfixable)"
+    },
+    "case-pinned-parent": {
+      "advisories": 1,
+      "packages": [
+        "postcss"
+      ],
+      "clearedByAuditFix": false,
+      "clearedByForce": true,
+      "difficulty": "breaking (npm audit fix --force)"
+    },
+    "case-transitive-lockfile": {
+      "advisories": 1,
+      "packages": [
+        "postcss"
+      ],
+      "clearedByAuditFix": true,
+      "clearedByForce": false,
+      "difficulty": "baseline (npm audit fix)"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "_note": "Synthetic. A small Indonesian baking-supply shop. Not derived from any real business, customer, or transaction. Prices use Indonesian numeric convention: '.' is the thousands separator and ',' is the decimal separator — Rp 1.250,50 is one thousand two hundred fifty rupiah and fifty sen.",
+
+  "toko": {
+    "nama": "Toko Bahan Kue Melati",
+    "kota": "Bandung",
+    "jam_buka": "08.00–17.00 WIB",
+    "hari_libur": "Minggu",
+    "pengiriman": "Gojek/Grab dalam kota. Luar kota via JNE, ongkir ditanggung pembeli.",
+    "pembayaran": "Transfer BCA, QRIS, atau tunai di toko."
+  },
+
+  "produk": [
+    { "sku": "TPG-001", "nama": "Tepung Terigu Cakra Kembar 1 kg",   "harga": "Rp 14.500",    "stok": 42, "satuan": "pak" },
+    { "sku": "TPG-002", "nama": "Tepung Terigu Segitiga Biru 1 kg",  "harga": "Rp 12.000",    "stok": 0,  "satuan": "pak" },
+    { "sku": "GLA-001", "nama": "Gula Pasir Halus 1 kg",             "harga": "Rp 16.750",    "stok": 8,  "satuan": "pak" },
+    { "sku": "MTG-001", "nama": "Margarin Blue Band 200 g",          "harga": "Rp 8.900",     "stok": 27, "satuan": "pcs" },
+    { "sku": "MTG-002", "nama": "Butter Anchor 227 g",               "harga": "Rp 41.000",    "stok": 5,  "satuan": "pcs" },
+    { "sku": "COK-001", "nama": "Dark Cooking Chocolate Colatta 1 kg","harga": "Rp 78.500",   "stok": 3,  "satuan": "batang" },
+    { "sku": "RGI-001", "nama": "Ragi Instan Fermipan 11 g",         "harga": "Rp 4.250",     "stok": 60, "satuan": "sachet" },
+    { "sku": "SUS-001", "nama": "Susu Bubuk Full Cream 500 g",       "harga": "Rp 39.900",    "stok": 12, "satuan": "pak" },
+    { "sku": "PWD-001", "nama": "Baking Powder Koepoe 45 g",         "harga": "Rp 7.500",     "stok": 0,  "satuan": "botol" },
+    { "sku": "VAN-001", "nama": "Vanilla Extract 100 ml",            "harga": "Rp 1.250,50",  "stok": 19, "satuan": "botol" },
+    { "sku": "LOY-001", "nama": "Loyang Bulat 22 cm",                "harga": "Rp 35.000",    "stok": 7,  "satuan": "pcs" },
+    { "sku": "SPT-001", "nama": "Spuit Set 24 pcs",                  "harga": "Rp 62.000",    "stok": 4,  "satuan": "set" }
+  ],
+
+  "promo": [
+    { "kode": "HEMAT10", "syarat": "Minimal belanja Rp 200.000", "potongan": "10%", "berlaku_sampai": "2026-08-31" }
+  ],
+
+  "pesanan": [
+    { "no": "INV-2026-0841", "pelanggan": "Ibu Rina",  "tanggal": "2026-08-03", "status": "Sudah dikirim",  "total": "Rp 128.400", "item": ["TPG-001 x2", "GLA-001 x1", "MTG-001 x3"] },
+    { "no": "INV-2026-0847", "pelanggan": "Pak Dedi",  "tanggal": "2026-08-05", "status": "Belum dibayar",  "total": "Rp 245.000", "item": ["COK-001 x2", "MTG-002 x2"] },
+    { "no": "INV-2026-0852", "pelanggan": "Ibu Rina",  "tanggal": "2026-08-06", "status": "Sedang diproses","total": "Rp 47.250",  "item": ["RGI-001 x5", "PWD-001 x1"] }
+  ]
+}

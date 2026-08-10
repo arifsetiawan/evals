@@ -1,0 +1,103 @@
+{
+  "_note": "TEMPLATE. Copy to redaction.json (gitignored) and fill in terms for YOUR source repository. Pass a different file with --redaction <path> to sanitize a different codebase. A populated deny list is a concentrated index of exactly what you are removing, which is why the real one never ships.",
+  "_lesson": "The first version of this file listed only customer and company names. It passed its own scan while the fixtures still carried internal audit IDs, a named competitor, module paths, and product strategy written in code comments. A deny list only finds what you already thought of — enumerate what is actually in your files before trusting it.",
+  "rename": [
+    {
+      "from": "<CustomerName>",
+      "to": "Northwind"
+    },
+    {
+      "from": "<ProductName>",
+      "to": "Acme"
+    },
+    {
+      "from": "<EmployerName>",
+      "to": "Globex"
+    },
+    {
+      "from": "<CompetitorName>",
+      "to": "Vertex Retail"
+    }
+  ],
+  "redact_patterns": [
+    {
+      "name": "audit-id",
+      "pattern": "\\\\(?\\\\b(AUD|ADR|RFC)[-\\\\s]?\\\\d{2,4}\\\\b\\\\)?",
+      "to": ""
+    },
+    {
+      "name": "feature-id",
+      "pattern": "\\\\(?\\\\bF\\\\d{2,4}\\\\b\\\\)?(?=[\\\\s:,.)-])",
+      "to": ""
+    },
+    {
+      "name": "issue-ref",
+      "pattern": "\\\\(#\\\\d{2,5}\\\\)",
+      "to": ""
+    },
+    {
+      "name": "internal-path",
+      "pattern": "\\\\b(<workspace1>|<workspace2>)/[\\\\w./-]+\\\\.(ts|tsx)\\\\b",
+      "to": "an internal module"
+    },
+    {
+      "name": "document-number",
+      "pattern": "\\\\b(INV|PO|SO)-\\\\d{4,8}-\\\\d{4,10}\\\\b",
+      "to": "DOC-0000-00000000"
+    },
+    {
+      "name": "email",
+      "pattern": "[\\\\w.+-]+@[\\\\w-]+\\\\.[\\\\w.]+",
+      "to": "user@example.com"
+    },
+    {
+      "name": "uuid",
+      "pattern": "\\\\b[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\\\b",
+      "to": "00000000-0000-0000-0000-000000000000"
+    },
+    {
+      "name": "ipv4",
+      "pattern": "\\\\b(?:\\\\d{1,3}\\\\.){3}\\\\d{1,3}\\\\b",
+      "to": "0.0.0.0"
+    }
+  ],
+  "_comment_scrub": "Two levels. A LINE marker removes that line and its continuations, for incident narration. A BLOCK marker removes the whole comment, for product and competitive reasoning — removing one line there leaves a fragment that still carries the point.",
+  "strip_comment_markers": [
+    "hit live on",
+    "discovered live",
+    "found live",
+    "sat stuck",
+    "reported by",
+    "customer reported",
+    "in production for",
+    "our differentiator"
+  ],
+  "strip_comment_blocks": [
+    "competitive read",
+    "'s approach",
+    "s approach (",
+    "competitor",
+    "roadmap",
+    "go-to-market",
+    "pricing tier",
+    "differentiator",
+    "matches how a human salesperson",
+    "the common case for a non-classes org",
+    "demo)",
+    "rather than"
+  ],
+  "deny": [
+    "<customername>",
+    "<productname>",
+    "<employername>",
+    "<competitorname>",
+    "AUD-",
+    "ADR-",
+    "<workspace>/src",
+    "competitive read",
+    "<db-user>",
+    "<db-name>",
+    "<office-ip-prefix>",
+    "@<yourdomain>"
+  ]
+}

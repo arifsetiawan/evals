@@ -1,0 +1,40 @@
+{
+  "label": "google/gemini-3.6-flash trial 3",
+  "model": "google/gemini-3.6-flash",
+  "trial": 3,
+  "costUsd": 0.034371,
+  "latencyMs": 16664,
+  "error": null,
+  "finishReason": "stop",
+  "meta": {
+    "summary": "{\"cards\": [{\"category\": \"reliability\", \"title\": \"Spike in errors during hour 14\", \"detail\": \"Hour 14 recorded 1,460 errors across 9,225 requests (15.8% error rate), accounting for 67.3% of the 2,169 total errors in the week.\"}, {\"category\": \"reliability\", \"title\": \"Complete failure rate for model-epsilon\", \"detail\": \"Model-epsilon failed on all 40 requests it received, resulting in a 100% error ra",
+    "publish_result": "not_configured"
+  },
+  "cards": [
+    {
+      "category": "reliability",
+      "title": "Spike in errors during hour 14",
+      "detail": "Hour 14 recorded 1,460 errors across 9,225 requests (15.8% error rate), accounting for 67.3% of the 2,169 total errors in the week."
+    },
+    {
+      "category": "reliability",
+      "title": "Complete failure rate for model-epsilon",
+      "detail": "Model-epsilon failed on all 40 requests it received, resulting in a 100% error rate."
+    },
+    {
+      "category": "usage",
+      "title": "Heavy traffic concentration from caller-01",
+      "detail": "Caller-01 accounts for 105,832 of the 204,993 total requests (51.6%) and $1,643.86 of the $3,354.82 total spend (49.0%)."
+    },
+    {
+      "category": "cost",
+      "title": "Elevated per-request cost for caller-07",
+      "detail": "Caller-07 incurred $174.12 in spend across 1,180 requests ($0.148 per request), compared to the system average of $0.016 per request."
+    },
+    {
+      "category": "performance",
+      "title": "Suboptimal cache hit rates for ten callers",
+      "detail": "Ten active callers exhibit cache hit rates below 9%, whereas the remaining primary callers achieve hit rates between 82% and 89%."
+    }
+  ]
+}

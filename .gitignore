@@ -1,0 +1,37 @@
+node_modules/
+.env
+.env.*
+!.env.example
+
+.worktrees/
+*.log
+
+# --- swe-production: PRIVATE SOURCE. Do not commit. ---------------------
+#
+# This eval runs against a private repository, and its outputs carry that
+# repository's contents:
+#
+#   transcripts/  — agent sessions including verbatim source read by the agent
+#                   (~50KB of real TypeScript per run)
+#   runs.json     — file paths, diffstats, edited-file lists
+#   tasks/*.json  — commit SHAs, full commit bodies, module layout
+#
+# Publishing any of it publishes the codebase. The harness and the write-up
+# contain none of it and are safe; these are not.
+swe-production/results/
+swe-production/tasks/
+transcripts/
+
+# The populated deny list is the single most sensitive file here: a
+# concentrated index of every customer, employer system, and infrastructure
+# string the sanitizer exists to remove. Publishing it would leak more than any
+# fixture it protects. Ship redaction.example.json; keep the real one local.
+swe-production/harness/redaction.json
+
+# Incident records. These preserve what an escaped run wrote — which means they
+# contain verbatim source from whatever repository it reached. The write-up of
+# an incident is publishable; the diff is not.
+.incident/
+
+.DS_Store
+.vitest-result-*.json

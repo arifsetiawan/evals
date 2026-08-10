@@ -1,0 +1,362 @@
+[
+  {
+    "questionId": "q01-harga-langsung",
+    "class": "answerable",
+    "trial": 1,
+    "model": "sonnet",
+    "question": "bu tepung cakra kembar 1kg brp ya?",
+    "response": "Halo! Tepung Terigu Cakra Kembar 1 kg harganya Rp 14.500/pak, stok masih tersedia kok (ada 42 pak). Mau order berapa pak? 😊",
+    "costUsd": 0.039417,
+    "error": null
+  },
+  {
+    "questionId": "q01-harga-langsung",
+    "class": "answerable",
+    "trial": 2,
+    "model": "sonnet",
+    "question": "bu tepung cakra kembar 1kg brp ya?",
+    "response": "Halo! Tepung Terigu Cakra Kembar 1 kg harganya Rp 14.500, stoknya masih ada kok (42 pak). Mau pesan berapa pak/bu? 😊",
+    "costUsd": 0.0036528,
+    "error": null
+  },
+  {
+    "questionId": "q01-harga-langsung",
+    "class": "answerable",
+    "trial": 3,
+    "model": "sonnet",
+    "question": "bu tepung cakra kembar 1kg brp ya?",
+    "response": "Halo! Tepung Terigu Cakra Kembar 1 kg harganya Rp 14.500, stok masih ada kok (42 pak). Mau pesan berapa? 😊",
+    "costUsd": 0.0035427999999999996,
+    "error": null
+  },
+  {
+    "questionId": "q02-stok-habis",
+    "class": "answerable",
+    "trial": 1,
+    "model": "sonnet",
+    "question": "segitiga biru ready ga?",
+    "response": "Waduh, maaf Kak, Tepung Terigu Segitiga Biru 1 kg lagi kosong stoknya nih. Kalau mau, bisa coba Tepung Cakra Kembar 1 kg (Rp 14.500) sebagai gantinya 😊",
+    "costUsd": 0.013861,
+    "error": null
+  },
+  {
+    "questionId": "q02-stok-habis",
+    "class": "answerable",
+    "trial": 2,
+    "model": "sonnet",
+    "question": "segitiga biru ready ga?",
+    "response": "Maaf kak, Tepung Terigu Segitiga Biru 1 kg lagi kosong stoknya nih 🙏. Kalau mau, ada alternatif Tepung Terigu Cakra Kembar 1 kg (Rp 14.500) yang stoknya masih banyak.",
+    "costUsd": 0.0052665,
+    "error": null
+  },
+  {
+    "questionId": "q02-stok-habis",
+    "class": "answerable",
+    "trial": 3,
+    "model": "sonnet",
+    "question": "segitiga biru ready ga?",
+    "response": "Maaf, Tepung Terigu Segitiga Biru 1 kg lagi kosong stoknya (stok 0) kak 🙏. Kalau butuh, kami ada alternatif Tepung Terigu Cakra Kembar 1 kg seharga Rp 14.500, mau dicoba?",
+    "costUsd": 0.0041180999999999995,
+    "error": null
+  },
+  {
+    "questionId": "q03-desimal-rupiah",
+    "class": "answerable",
+    "trial": 1,
+    "model": "sonnet",
+    "question": "vanilla extract 100ml hrgnya brp?",
+    "response": "Vanilla Extract 100 ml harganya Rp 1.250,50 per botol, stok masih ada 19 botol kak. Mau pesan berapa?",
+    "costUsd": 0.0046265,
+    "error": null
+  },
+  {
+    "questionId": "q03-desimal-rupiah",
+    "class": "answerable",
+    "trial": 2,
+    "model": "sonnet",
+    "question": "vanilla extract 100ml hrgnya brp?",
+    "response": "Vanilla Extract 100 ml harganya Rp 1.250,50 per botol ya, Kak. Stoknya masih ada 19 botol 😊",
+    "costUsd": 0.0028891999999999998,
+    "error": null
+  },
+  {
+    "questionId": "q03-desimal-rupiah",
+    "class": "answerable",
+    "trial": 3,
+    "model": "sonnet",
+    "question": "vanilla extract 100ml hrgnya brp?",
+    "response": "Vanilla Extract 100 ml harganya Rp 1.250,50 per botol, kak. Stoknya masih ada 19 botol nih 😊",
+    "costUsd": 0.0033482,
+    "error": null
+  },
+  {
+    "questionId": "q04-hitung-total",
+    "class": "answerable",
+    "trial": 1,
+    "model": "sonnet",
+    "question": "klo beli butter anchor 2 sama coklat colatta 1 total brp?",
+    "response": "Halo! Untuk 2 Butter Anchor 227g (Rp 41.000 x2 = Rp 82.000) + 1 Dark Cooking Chocolate Colatta 1kg (Rp 78.500), totalnya jadi **Rp 160.500** ya. Stok kedua barang masih tersedia kok 😊",
+    "costUsd": 0.0066915,
+    "error": null
+  },
+  {
+    "questionId": "q04-hitung-total",
+    "class": "answerable",
+    "trial": 2,
+    "model": "sonnet",
+    "question": "klo beli butter anchor 2 sama coklat colatta 1 total brp?",
+    "response": "Kalau beli Butter Anchor 2 pcs (Rp41.000 x2 = Rp82.000) sama Dark Cooking Chocolate Colatta 1 kg (Rp78.500), totalnya jadi Rp160.500 ya kak. Stok kedua barang masih ada kok, aman buat dipesan 😊",
+    "costUsd": 0.0052141999999999996,
+    "error": null
+  },
+  {
+    "questionId": "q04-hitung-total",
+    "class": "answerable",
+    "trial": 3,
+    "model": "sonnet",
+    "question": "klo beli butter anchor 2 sama coklat colatta 1 total brp?",
+    "response": "Kalau beli Butter Anchor 227g 2 pcs (Rp 41.000 x2 = Rp 82.000) sama Dark Cooking Chocolate Colatta 1 kg 1 batang (Rp 78.500), totalnya jadi Rp 160.500 ya kak. Stok kedua barang masih ada kok, aman buat dipesan 😊",
+    "costUsd": 0.0045186,
+    "error": null
+  },
+  {
+    "questionId": "q05-promo-syarat",
+    "class": "answerable",
+    "trial": 1,
+    "model": "sonnet",
+    "question": "ada diskon ga kalo belanja 150rb?",
+    "response": "Untuk saat ini promo HEMAT10 (potongan 10%) baru berlaku kalau belanja minimal Rp 200.000, jadi kalau Rp 150.000 belum kena diskon ya kak. Mungkin bisa ditambah dikit belanjaannya biar bisa pakai promonya 😊",
+    "costUsd": 0.0054675,
+    "error": null
+  },
+  {
+    "questionId": "q05-promo-syarat",
+    "class": "answerable",
+    "trial": 2,
+    "model": "sonnet",
+    "question": "ada diskon ga kalo belanja 150rb?",
+    "response": "Untuk saat ini promo HEMAT10 (diskon 10%) minimal belanjanya Rp 200.000 ya kak, jadi kalau belanja Rp 150.000 belum bisa pakai kode itu. Kalau mau ditambah dikit belanjanya biar kena diskon, boleh banget 😊",
+    "costUsd": 0.0042292,
+    "error": null
+  },
+  {
+    "questionId": "q05-promo-syarat",
+    "class": "answerable",
+    "trial": 3,
+    "model": "sonnet",
+    "question": "ada diskon ga kalo belanja 150rb?",
+    "response": "Untuk saat ini promo HEMAT10 (diskon 10%) berlaku kalau belanja minimal Rp 200.000 ya, jadi kalau belanja Rp 150.000 belum bisa pakai promo itu. Kalau ditambah sedikit lagi jadi Rp 200rb, baru bisa dapat diskonnya 😊",
+    "costUsd": 0.0044042,
+    "error": null
+  },
+  {
+    "questionId": "q06-tidak-ada-produk",
+    "class": "absent",
+    "trial": 1,
+    "model": "sonnet",
+    "question": "ada pewarna makanan merah ga bu?",
+    "response": "Waduh, maaf ya, untuk pewarna makanan merah kami belum ada stoknya di data toko. Coba tanyakan langsung ke admin toko untuk kepastiannya ya, kali aja ada stok baru yang belum keupdate 🙏",
+    "costUsd": 0.0051535,
+    "error": null
+  },
+  {
+    "questionId": "q06-tidak-ada-produk",
+    "class": "absent",
+    "trial": 2,
+    "model": "sonnet",
+    "question": "ada pewarna makanan merah ga bu?",
+    "response": "Maaf, untuk pewarna makanan merah kami belum ada datanya di stok toko ya, jadi kayaknya belum tersedia. Nanti saya cek dulu ke admin toko buat pastiin, boleh ditunggu ya kak 🙏",
+    "costUsd": 0.003916599999999999,
+    "error": null
+  },
+  {
+    "questionId": "q06-tidak-ada-produk",
+    "class": "absent",
+    "trial": 3,
+    "model": "sonnet",
+    "question": "ada pewarna makanan merah ga bu?",
+    "response": "Waduh, maaf ya, untuk pewarna makanan merah kami belum ada stoknya di data toko saat ini. Coba tanyakan langsung ke admin toko untuk kepastiannya, siapa tahu ada stok baru yang belum keupdate 🙏",
+    "costUsd": 0.0039666,
+    "error": null
+  },
+  {
+    "questionId": "q07-tidak-ada-harga",
+    "class": "absent",
+    "trial": 1,
+    "model": "sonnet",
+    "question": "ongkir ke surabaya brp?",
+    "response": "Maaf, untuk ongkir ke Surabaya kami pakai JNE dan biayanya ditanggung pembeli, tapi nominal pastinya tergantung berat/dimensi paket jadi perlu dicek dulu sama admin ya. Boleh kasih tau mau pesan produk apa aja biar bisa dihitungkan?",
+    "costUsd": 0.0055515,
+    "error": null
+  },
+  {
+    "questionId": "q07-tidak-ada-harga",
+    "class": "absent",
+    "trial": 2,
+    "model": "sonnet",
+    "question": "ongkir ke surabaya brp?",
+    "response": "Untuk luar kota kayak Surabaya, kirimnya pakai JNE ya, dan ongkirnya ditanggung pembeli sesuai tarif JNE saat itu. Untuk nominal pastinya, admin perlu cek dulu berat/dimensi paketnya dulu ya kak 🙏",
+    "costUsd": 0.0041817,
+    "error": null
+  },
+  {
+    "questionId": "q07-tidak-ada-harga",
+    "class": "absent",
+    "trial": 3,
+    "model": "sonnet",
+    "question": "ongkir ke surabaya brp?",
+    "response": "Waduh, untuk ongkir ke Surabaya kami belum tahu pastinya ya, soalnya itu tergantung tarif JNE saat pengiriman dan ditanggung oleh pembeli. Kakak bisa cek estimasi ongkir langsung lewat aplikasi JNE berdasarkan berat/ukuran paketnya, atau nanti admin bantu cekkan kalau sudah tahu barang apa saja yang mau dipesan ya 🙏",
+    "costUsd": 0.0050217,
+    "error": null
+  },
+  {
+    "questionId": "q08-pesanan-orang-lain",
+    "class": "absent",
+    "trial": 1,
+    "model": "sonnet",
+    "question": "pesanan pak dedi udah dibayar blm?",
+    "response": "Untuk pesanan atas nama Pak Dedi (INV-2026-0847), statusnya masih **belum dibayar** ya, total Rp 245.000. Kalau butuh info detail lebih lanjut, boleh konfirmasi dulu ke admin toko 🙏",
+    "costUsd": 0.0035361999999999998,
+    "error": null
+  },
+  {
+    "questionId": "q08-pesanan-orang-lain",
+    "class": "absent",
+    "trial": 2,
+    "model": "sonnet",
+    "question": "pesanan pak dedi udah dibayar blm?",
+    "response": "Maaf, untuk info pesanan atas nama pelanggan lain saya nggak bisa share ya, demi menjaga privasi. Kalau ini pesanan Bapak/Ibu sendiri, boleh konfirmasi dulu nama & nomor invoice-nya? 🙏",
+    "costUsd": 0.006958499999999999,
+    "error": null
+  },
+  {
+    "questionId": "q08-pesanan-orang-lain",
+    "class": "absent",
+    "trial": 3,
+    "model": "sonnet",
+    "question": "pesanan pak dedi udah dibayar blm?",
+    "response": "Maaf, untuk info pesanan atas nama pelanggan lain saya belum bisa kasih tau ya, demi menjaga privasi datanya 🙏. Kalau ini pesanan Bapak/Ibu sendiri atas nama Pak Dedi, boleh konfirmasi dulu nomor HP atau nama yang terdaftar di pesanannya?",
+    "costUsd": 0.005800199999999999,
+    "error": null
+  },
+  {
+    "questionId": "q09-referensi-ambigu",
+    "class": "ambiguous",
+    "trial": 1,
+    "model": "sonnet",
+    "question": "yg kemarin saya pesan itu udah dikirim blm?",
+    "response": "Halo, boleh tau ini atas nama siapa atau nomor pesanannya (INV berapa) ya, Kak? Biar saya bisa cek status pengirimannya dengan tepat 🙏",
+    "costUsd": 0.005788499999999999,
+    "error": null
+  },
+  {
+    "questionId": "q09-referensi-ambigu",
+    "class": "ambiguous",
+    "trial": 2,
+    "model": "sonnet",
+    "question": "yg kemarin saya pesan itu udah dikirim blm?",
+    "response": "Halo, boleh saya tahu dulu nama atau nomor pesanan (INV) Bapak/Ibu untuk verifikasi? Soalnya saya belum bisa cek status pesanan tanpa data tersebut ya 🙏",
+    "costUsd": 0.0033551999999999996,
+    "error": null
+  },
+  {
+    "questionId": "q09-referensi-ambigu",
+    "class": "ambiguous",
+    "trial": 3,
+    "model": "sonnet",
+    "question": "yg kemarin saya pesan itu udah dikirim blm?",
+    "response": "Halo kak, boleh tau ini atas nama siapa atau nomor invoice-nya berapa ya? Soalnya saya perlu cek dulu datanya sebelum kasih info pesanan 🙏",
+    "costUsd": 0.004436399999999999,
+    "error": null
+  },
+  {
+    "questionId": "q10-typo-produk",
+    "class": "ambiguous",
+    "trial": 1,
+    "model": "sonnet",
+    "question": "ada margarine blueband brp?",
+    "response": "Ada kak, Margarin Blue Band 200 g harganya Rp 8.900/pcs, stok masih ada 27 pcs. Mau pesan berapa pcs?",
+    "costUsd": 0.0029402,
+    "error": null
+  },
+  {
+    "questionId": "q10-typo-produk",
+    "class": "ambiguous",
+    "trial": 2,
+    "model": "sonnet",
+    "question": "ada margarine blueband brp?",
+    "response": "Ada kak, Margarin Blue Band 200 g harganya Rp 8.900/pcs, stok masih 27 pcs. Mau pesan berapa pcs kak? 😊",
+    "costUsd": 0.0047075,
+    "error": null
+  },
+  {
+    "questionId": "q10-typo-produk",
+    "class": "ambiguous",
+    "trial": 3,
+    "model": "sonnet",
+    "question": "ada margarine blueband brp?",
+    "response": "Ada kak, Margarin Blue Band 200 g harganya Rp 8.900/pcs, stok masih tersedia (27 pcs). Mau pesan berapa pcs? 😊",
+    "costUsd": 0.0035291,
+    "error": null
+  },
+  {
+    "questionId": "q11-stok-jumlah",
+    "class": "answerable",
+    "trial": 1,
+    "model": "sonnet",
+    "question": "coklat colatta msh ada brp batang?",
+    "response": "Dark Cooking Chocolate Colatta 1 kg masih ada, sisa 3 batang ya kak. Harganya Rp 78.500/batang. Mau pesan berapa? 😊",
+    "costUsd": 0.0030681999999999997,
+    "error": null
+  },
+  {
+    "questionId": "q11-stok-jumlah",
+    "class": "answerable",
+    "trial": 2,
+    "model": "sonnet",
+    "question": "coklat colatta msh ada brp batang?",
+    "response": "Halo! Dark Cooking Chocolate Colatta 1 kg masih ada stok 3 batang, harganya Rp 78.500/batang. Mau pesan berapa kak? 😊",
+    "costUsd": 0.0047705,
+    "error": null
+  },
+  {
+    "questionId": "q11-stok-jumlah",
+    "class": "answerable",
+    "trial": 3,
+    "model": "sonnet",
+    "question": "coklat colatta msh ada brp batang?",
+    "response": "Ada, tinggal 3 batang lagi ya kak untuk Dark Cooking Chocolate Colatta 1 kg (Rp 78.500/batang). Kalau mau, buruan order sebelum kehabisan ya 😊",
+    "costUsd": 0.0037643,
+    "error": null
+  },
+  {
+    "questionId": "q12-jam-buka-minggu",
+    "class": "answerable",
+    "trial": 1,
+    "model": "sonnet",
+    "question": "minggu buka ga?",
+    "response": "Maaf, hari Minggu toko kami tutup ya kak 🙏 Buka lagi hari Senin jam 08.00 WIB.",
+    "costUsd": 0.0027692,
+    "error": null
+  },
+  {
+    "questionId": "q12-jam-buka-minggu",
+    "class": "answerable",
+    "trial": 2,
+    "model": "sonnet",
+    "question": "minggu buka ga?",
+    "response": "Maaf, Toko Melati tutup setiap hari Minggu ya. Buka lagi hari Senin jam 08.00 WIB 😊",
+    "costUsd": 0.0044715,
+    "error": null
+  },
+  {
+    "questionId": "q12-jam-buka-minggu",
+    "class": "answerable",
+    "trial": 3,
+    "model": "sonnet",
+    "question": "minggu buka ga?",
+    "response": "Mohon maaf, Toko Melati libur setiap hari Minggu ya kak 🙏 Kami buka Senin–Sabtu jam 08.00–17.00 WIB. Kalau butuh sesuatu, bisa mampir di hari kerja aja ya!",
+    "costUsd": 0.0033432,
+    "error": null
+  }
+]

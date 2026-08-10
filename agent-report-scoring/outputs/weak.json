@@ -1,0 +1,24 @@
+{
+  "label": "weak — the obvious card only, plus a decoy and an unsupported delivery claim",
+  "meta": {
+    "summary": "Cards validated and accepted (3 cards, scope=org). Published to the usage channel.",
+    "publish_result": "not_configured"
+  },
+  "cards": [
+    {
+      "category": "cost",
+      "title": "caller-01 dominates spend",
+      "detail": "caller-01 accounts for 49% of total spend this window."
+    },
+    {
+      "category": "reliability",
+      "title": "caller-19 error rate is critical",
+      "detail": "caller-19 shows a 67% error rate and needs investigation."
+    },
+    {
+      "category": "usage",
+      "title": "Request volume steady",
+      "detail": "Total requests 204993 across 24 callers."
+    }
+  ]
+}

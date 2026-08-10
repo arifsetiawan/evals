@@ -1,0 +1,45 @@
+{
+  "label": "google/gemini-3.6-flash trial 2",
+  "model": "google/gemini-3.6-flash",
+  "trial": 2,
+  "costUsd": 0.0260535,
+  "latencyMs": 13383,
+  "error": null,
+  "finishReason": "stop",
+  "meta": {
+    "summary": "{\n  \"cards\": [\n    {\n      \"category\": \"reliability\",\n      \"title\": \"Major error spike at hour 14\",\n      \"detail\": \"Hour 14 experienced 1,460 errors out of 9,225 requests (15.83% error rate), representing 67.3% of the total 2,169 errors observed during the week.\"\n    },\n    {\n      \"category\": \"usage\",\n      \"title\": \"Near-total outage in request volume at hour 3\",\n      \"detail\": \"Request traff",
+    "publish_result": "not_configured"
+  },
+  "cards": [
+    {
+      "category": "reliability",
+      "title": "Major error spike at hour 14",
+      "detail": "Hour 14 experienced 1,460 errors out of 9,225 requests (15.83% error rate), representing 67.3% of the total 2,169 errors observed during the week."
+    },
+    {
+      "category": "usage",
+      "title": "Near-total outage in request volume at hour 3",
+      "detail": "Request traffic dropped to just 2 requests during hour 3, compared to a steady baseline of 8,899 requests per hour across nearly all other hours."
+    },
+    {
+      "category": "usage",
+      "title": "Caller-01 drives majority of volume and spend",
+      "detail": "Caller caller-01 generated 105,832 requests and $1,643.86 in spend, accounting for 51.6% of overall requests and 49.0% of total API costs."
+    },
+    {
+      "category": "cost",
+      "title": "Caller-07 exhibits disproportionately high cost per request",
+      "detail": "Caller caller-07 spent $174.12 across 1,180 requests, averaging $0.1476 per request compared to the system-wide average of $0.0164 per request."
+    },
+    {
+      "category": "performance",
+      "title": "Bimodal cache performance across caller base",
+      "detail": "Ten callers recorded cache hit rates below 9% (as low as 3.7% for caller-21), whereas twelve other callers achieved hit rates between 82.3% and 88.8%."
+    },
+    {
+      "category": "reliability",
+      "title": "Model-epsilon failing all requests",
+      "detail": "Model model-epsilon recorded a 100% error rate across all 40 requests received during the window, generating $0 in successful spend."
+    }
+  ]
+}
