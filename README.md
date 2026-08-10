@@ -46,7 +46,7 @@ that looks finished. That is why every test here scores *how* the model worked s
 |---|---|---|
 | [`agent-report-scoring/`](agent-report-scoring/) | Given a week of usage data, does the model find the real problems and ignore the fake ones? | Done, 4 models |
 | [`grounded-response-id/`](grounded-response-id/) | Does a shop assistant answer from the shop's data, admit when it doesn't know, and refuse what it shouldn't share? In Indonesian. | Done, 4 models |
-| [`dependency-remediation/`](dependency-remediation/) | Given a real CVE in a project's dependencies, can it clear the advisory without deleting the package or silencing the scanner? | Done, 4 models, 48 runs |
+| [`cve-remediation/`](cve-remediation/) | Given a real CVE in a project's dependencies, can it clear the advisory without deleting the package or silencing the scanner? | Done, 4 models, 48 runs |
 | [`swe-production/`](swe-production/) | Can it fix real bugs from a real business application? | Awaiting rerun. First 27-run matrix withdrawn after a harness bug; fix now smoke-tested |
 
 The first three include everything needed to run them and will give you the same numbers we got.
