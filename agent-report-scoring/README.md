@@ -65,20 +65,24 @@ under test rather than in the judge.
 
 ## Findings
 
-### Four models, three trials each
+### Six models, three trials each
 
 | model | bracket | checks passed | median recall | cost |
 |---|---|---:|---:|---:|
 | **z-ai/glm-5.2** | **economy** | **11/15** | **5/5** | $0.019 |
 | anthropic/claude-sonnet-5 | frontier | 9/15 | 4/5 | $0.091 |
+| openai/gpt-5.6-terra | frontier | 9/15 | 3/5 | $0.042 |
+| **openai/gpt-5.6-luna** | **economy** | **9/15** | 3/5 | **$0.0036** |
 | google/gemini-3.6-flash | frontier | 8/15 | 4/5 | $0.095 |
 | deepseek/deepseek-v4-flash | economy | 7/15 | 3/5 | $0.002 |
 
-**1. The cheapest bracket wins this task.** `glm-5.2` found all five planted findings at the median
-and passed more checks than either frontier model, at a fifth of Sonnet's cost. Nothing about the
-price ordering predicted it.
+**1. The economy bracket wins this task, and price predicts nothing.** `glm-5.2` found all five
+planted findings at the median and passed more checks than any frontier model, at a fifth of
+Sonnet's cost. `gpt-5.6-luna` ties Sonnet on checks at **a twenty-fifth of the price**. Meanwhile
+`deepseek`, cheaper still, comes last. The ordering by score and the ordering by price have almost
+nothing to do with each other.
 
-**2. Recall was never the hard part — grounding was.** Most failures across all four models are
+**2. Recall was never the hard part — grounding was.** Most failures across all six models are
 GROUNDED, not RECALL: figures that appear nowhere in the fixture and follow from nothing in it,
 stated with the same confidence as the real ones. Models that found every planted finding still
 invented numbers alongside them.

@@ -1,0 +1,40 @@
+{
+  "label": "openai/gpt-5.6-terra trial 1",
+  "model": "openai/gpt-5.6-terra",
+  "trial": 1,
+  "costUsd": 0.01771325,
+  "latencyMs": 27858,
+  "error": null,
+  "finishReason": "stop",
+  "meta": {
+    "summary": "{\"cards\":[{\"category\":\"reliability\",\"title\":\"Hour 14 drives the error incident\",\"detail\":\"Hour 14 recorded 1,460 errors in 9,225 requests, a 15.8% error rate and 67.3% of all 2,169 weekly errors. Other high-volume hours recorded 31 errors in 8,899 requests each, so investigate traffic and dependencies at hour 14.\"},{\"category\":\"cost\",\"title\":\"caller-07 has a disproportionate cost per request\",\"det",
+    "publish_result": "not_configured"
+  },
+  "cards": [
+    {
+      "category": "reliability",
+      "title": "Hour 14 drives the error incident",
+      "detail": "Hour 14 recorded 1,460 errors in 9,225 requests, a 15.8% error rate and 67.3% of all 2,169 weekly errors. Other high-volume hours recorded 31 errors in 8,899 requests each, so investigate traffic and dependencies at hour 14."
+    },
+    {
+      "category": "cost",
+      "title": "caller-07 has a disproportionate cost per request",
+      "detail": "caller-07 spent $174.12 on 1,180 requests, or $0.148 per request, versus $0.016 per request across all 204,993 requests. It represents 0.6% of requests but 5.2% of the $3,354.82 weekly spend."
+    },
+    {
+      "category": "cost",
+      "title": "Low-cache callers are a material optimization target",
+      "detail": "Ten callers with cache-hit rates from 3.7% to 8.9% generated 44,951 requests and $849.66 in spend, 21.9% of requests and 25.3% of total spend. Their weighted cache-hit rate is 6.6%; review their cache keys and cache eligibility."
+    },
+    {
+      "category": "performance",
+      "title": "model-alpha has the highest p95 latency at high volume",
+      "detail": "model-alpha processed 86,080 requests, 42.0% of total volume, with a 2,454 ms p95 latency. This exceeds model-beta at 2,229 ms, model-delta at 1,689 ms, and model-gamma at 1,310 ms; prioritize latency investigation or routing alternatives for alpha traffic."
+    },
+    {
+      "category": "usage",
+      "title": "caller-01 is the dominant client",
+      "detail": "caller-01 generated 105,832 requests, 51.6% of all requests, and $1,643.86 in spend, 49.0% of the total. Changes affecting this caller have the largest impact on weekly usage and cost."
+    }
+  ]
+}

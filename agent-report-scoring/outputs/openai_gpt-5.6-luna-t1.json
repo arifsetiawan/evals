@@ -1,0 +1,40 @@
+{
+  "label": "openai/gpt-5.6-luna trial 1",
+  "model": "openai/gpt-5.6-luna",
+  "trial": 1,
+  "costUsd": 0.001489925,
+  "latencyMs": 19242,
+  "error": null,
+  "finishReason": "stop",
+  "meta": {
+    "summary": "{\"cards\":[{\"category\":\"reliability\",\"title\":\"Hour 14 has a concentrated error spike\",\"detail\":\"Hour 14 recorded 1,460 errors in 9,225 requests, an error rate of 15.83%, versus 709 errors in 195,768 requests across the other hours, or 0.36%. Investigate the hour-14 deployment, dependency, or traffic segment.\"},{\"category\":\"cost\",\"title\":\"Caller-07 has an unusually high unit cost\",\"detail\":\"Caller-0",
+    "publish_result": "not_configured"
+  },
+  "cards": [
+    {
+      "category": "reliability",
+      "title": "Hour 14 has a concentrated error spike",
+      "detail": "Hour 14 recorded 1,460 errors in 9,225 requests, an error rate of 15.83%, versus 709 errors in 195,768 requests across the other hours, or 0.36%. Investigate the hour-14 deployment, dependency, or traffic segment."
+    },
+    {
+      "category": "cost",
+      "title": "Caller-07 has an unusually high unit cost",
+      "detail": "Caller-07 spent $174.12 on 1,180 requests, or $0.1476 per request, compared with $0.0164 overall, about 9.0 times higher. Check its model selection, token volume, or request configuration."
+    },
+    {
+      "category": "usage",
+      "title": "Caller-01 dominates traffic and spend",
+      "detail": "Caller-01 generated 105,832 requests, 51.6% of total traffic, and $1,643.86 of spend, 49.0% of the total. It also produced 952 errors, 43.9% of all errors, so it is the highest-leverage caller for cost and reliability controls."
+    },
+    {
+      "category": "usage",
+      "title": "Ten callers show systematically weak cache performance",
+      "detail": "Callers 03, 05, 07, 09, 11, 13, 15, 17, 21, and 23 handled 44,951 requests and $849.66 of spend while reporting cache-hit rates from 3.7% to 8.9%; the other regular callers range from 82.3% to 88.8%. Inspect cache keys, eligibility, and configuration for this cohort."
+    },
+    {
+      "category": "performance",
+      "title": "Model-alpha is the main latency bottleneck",
+      "detail": "Model-alpha handled 86,080 requests and $1,409.02, about 42.0% of both total requests and spend, while having the highest meaningful-model p95 latency at 2,454 ms. Review routing and prompt or payload characteristics before directing additional traffic to it."
+    }
+  ]
+}

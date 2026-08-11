@@ -7,19 +7,19 @@ results are committed next to the code that produced them.
 
 ## The short version
 
-Four models were tested across the first three, from expensive to cheap: `claude-sonnet-5`,
-`gemini-3.6-flash`, `glm-5.2`, and `deepseek-v4-flash`. How much cheaper the cheapest one works out
-to be depends on the task, and it is never one number: across these tests it cost between **21x and
-45x** less than the dearest model, because what a task costs depends on how many turns it takes,
-not only on the price per token.
+Six models were tested across the first three, from expensive to cheap: `claude-sonnet-5`,
+`gemini-3.6-flash`, `gpt-5.6-terra`, `glm-5.2`, `deepseek-v4-flash`, and `gpt-5.6-luna`. How much
+cheaper the cheapest one works out to be depends on the task, and it is never one number: across
+these tests it cost between **32x and 134x** less than the dearest, because what a task costs
+depends on how many turns a model takes, not only on its price per token.
 
 **There is no single "best model." It depends entirely on the job.**
 
 | The job | Who won | The number |
 |---|---|---|
-| Analysing usage data | **The cheap model** | glm-5.2 beat both expensive models at 1/5 the cost |
+| Analysing usage data | **A cheap model** | glm-5.2 beat every expensive model at 1/5 the cost |
 | Answering customer questions | The expensive model | but see below, this one is not really about winning |
-| Clearing a real security advisory | **The cheap model, for 7 cents** | deepseek matched Sonnet on every case at 1/21 the cost |
+| Clearing a real security advisory | **Nearly everyone** | 5 of 6 cleared every case; the cheapest for 4.6 cents against Sonnet's $1.45 |
 | Fixing real bugs in real code | **Not yet answered** | first matrix withdrawn after a harness bug; fixed and awaiting rerun |
 
 So a cheap model can be better than an expensive one, worse than an expensive one, or exactly the
@@ -38,6 +38,11 @@ someone who had not proved who they were. It did this every single time it was a
 Everything it said was true and came from the data it was given. It did not make anything up. Any
 check that asks "is this answer accurate?" passes it. The answer was accurate and should never have
 been said.
+
+The uncomfortable part is that you cannot buy your way out of this. The *cheapest* model tested —
+a hundredth of the price of the dearest — refused correctly every time, while two models costing
+more than it failed. Whatever governs this does not track price, so the only way to know is to
+test for it.
 
 This is not the model being incapable. It is the model being confidently wrong in a way
 that looks finished. That is why every test here scores *how* the model worked separately from

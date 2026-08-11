@@ -1,0 +1,722 @@
+[
+  {
+    "questionId": "q01-harga-langsung",
+    "trial": 1,
+    "model": "openai/gpt-5.6-terra",
+    "question": "bu tepung cakra kembar 1kg brp ya?",
+    "response": "Tepung Terigu Cakra Kembar 1 kg harganya Rp 14.500/pak ya, stok tersedia 42 pak.",
+    "costUsd": 0.0017705,
+    "latencyMs": 1735,
+    "error": null
+  },
+  {
+    "questionId": "q01-harga-langsung",
+    "trial": 2,
+    "model": "openai/gpt-5.6-terra",
+    "question": "bu tepung cakra kembar 1kg brp ya?",
+    "response": "Tepung Terigu Cakra Kembar 1 kg harganya Rp 14.500/pak ya, stok tersedia 42 pak.",
+    "costUsd": 0.0003376,
+    "latencyMs": 1083,
+    "error": null
+  },
+  {
+    "questionId": "q01-harga-langsung",
+    "trial": 3,
+    "model": "openai/gpt-5.6-terra",
+    "question": "bu tepung cakra kembar 1kg brp ya?",
+    "response": "Tepung Terigu Cakra Kembar 1 kg harganya Rp 14.500/pak ya, Bu. Stok tersedia 42 pak.",
+    "costUsd": 0.0003556,
+    "latencyMs": 1135,
+    "error": null
+  },
+  {
+    "questionId": "q02-stok-habis",
+    "trial": 1,
+    "model": "openai/gpt-5.6-terra",
+    "question": "segitiga biru ready ga?",
+    "response": "Maaf, Tepung Terigu Segitiga Biru 1 kg lagi habis ya kak.",
+    "costUsd": 0.0002908,
+    "latencyMs": 1099,
+    "error": null
+  },
+  {
+    "questionId": "q02-stok-habis",
+    "trial": 2,
+    "model": "openai/gpt-5.6-terra",
+    "question": "segitiga biru ready ga?",
+    "response": "Maaf, Tepung Terigu Segitiga Biru 1 kg sedang kosong ya.",
+    "costUsd": 0.000265,
+    "latencyMs": 971,
+    "error": null
+  },
+  {
+    "questionId": "q02-stok-habis",
+    "trial": 3,
+    "model": "openai/gpt-5.6-terra",
+    "question": "segitiga biru ready ga?",
+    "response": "Maaf, Tepung Terigu Segitiga Biru 1 kg sedang habis ya, stoknya 0 pak.",
+    "costUsd": 0.000307,
+    "latencyMs": 3196,
+    "error": null
+  },
+  {
+    "questionId": "q03-desimal-rupiah",
+    "trial": 1,
+    "model": "openai/gpt-5.6-terra",
+    "question": "vanilla extract 100ml hrgnya brp?",
+    "response": "Vanilla Extract 100 ml harganya Rp 1.250,50 ya kak. Stok tersedia 19 botol.",
+    "costUsd": 0.0003318,
+    "latencyMs": 1266,
+    "error": null
+  },
+  {
+    "questionId": "q03-desimal-rupiah",
+    "trial": 2,
+    "model": "openai/gpt-5.6-terra",
+    "question": "vanilla extract 100ml hrgnya brp?",
+    "response": "Vanilla Extract 100 ml harganya Rp 1.250,50 ya kak. Stok tersedia 19 botol.",
+    "costUsd": 0.0003134,
+    "latencyMs": 1148,
+    "error": null
+  },
+  {
+    "questionId": "q03-desimal-rupiah",
+    "trial": 3,
+    "model": "openai/gpt-5.6-terra",
+    "question": "vanilla extract 100ml hrgnya brp?",
+    "response": "Vanilla Extract 100 ml harganya Rp 1.250,50 ya kak. Stok tersedia 19 botol.",
+    "costUsd": 0.0003134,
+    "latencyMs": 1275,
+    "error": null
+  },
+  {
+    "questionId": "q04-hitung-total",
+    "trial": 1,
+    "model": "openai/gpt-5.6-terra",
+    "question": "klo beli butter anchor 2 sama coklat colatta 1 total brp?",
+    "response": "Butter Anchor 2 pcs + Coklat Colatta 1 batang totalnya Rp 160.500 ya kak. Stoknya masih tersedia.",
+    "costUsd": 0.0005133,
+    "latencyMs": 2019,
+    "error": null
+  },
+  {
+    "questionId": "q04-hitung-total",
+    "trial": 2,
+    "model": "openai/gpt-5.6-terra",
+    "question": "klo beli butter anchor 2 sama coklat colatta 1 total brp?",
+    "response": "Butter Anchor 2 pcs + Coklat Colatta 1 batang totalnya Rp 160.500 ya.",
+    "costUsd": 0.000434,
+    "latencyMs": 2746,
+    "error": null
+  },
+  {
+    "questionId": "q04-hitung-total",
+    "trial": 3,
+    "model": "openai/gpt-5.6-terra",
+    "question": "klo beli butter anchor 2 sama coklat colatta 1 total brp?",
+    "response": "Butter Anchor 2 pcs + Coklat Colatta 1 batang totalnya Rp 160.500 ya. Stoknya tersedia.",
+    "costUsd": 0.000524,
+    "latencyMs": 2225,
+    "error": null
+  },
+  {
+    "questionId": "q05-promo-syarat",
+    "trial": 1,
+    "model": "openai/gpt-5.6-terra",
+    "question": "ada diskon ga kalo belanja 150rb?",
+    "response": "Untuk belanja Rp150.000 belum ada diskon ya kak. Promo HEMAT10 berlaku minimal belanja Rp200.000, potongan 10% sampai 31 Agustus 2026.",
+    "costUsd": 0.0004218,
+    "latencyMs": 1233,
+    "error": null
+  },
+  {
+    "questionId": "q05-promo-syarat",
+    "trial": 2,
+    "model": "openai/gpt-5.6-terra",
+    "question": "ada diskon ga kalo belanja 150rb?",
+    "response": "Untuk promo HEMAT10, minimal belanja Rp200.000 ya Kak. Belanja Rp150.000 belum memenuhi syarat promo tersebut.",
+    "costUsd": 0.0003314,
+    "latencyMs": 1174,
+    "error": null
+  },
+  {
+    "questionId": "q05-promo-syarat",
+    "trial": 3,
+    "model": "openai/gpt-5.6-terra",
+    "question": "ada diskon ga kalo belanja 150rb?",
+    "response": "Untuk promo HEMAT10, minimal belanja Rp 200.000 ya Kak. Jadi belanja Rp 150.000 belum dapat diskon tersebut.",
+    "costUsd": 0.0003434,
+    "latencyMs": 1344,
+    "error": null
+  },
+  {
+    "questionId": "q06-tidak-ada-produk",
+    "trial": 1,
+    "model": "openai/gpt-5.6-terra",
+    "question": "ada pewarna makanan merah ga bu?",
+    "response": "Maaf kak, untuk pewarna makanan merah belum ada di data stok kami. Nanti saya cek dulu ke admin ya.",
+    "costUsd": 0.0003148,
+    "latencyMs": 1278,
+    "error": null
+  },
+  {
+    "questionId": "q06-tidak-ada-produk",
+    "trial": 2,
+    "model": "openai/gpt-5.6-terra",
+    "question": "ada pewarna makanan merah ga bu?",
+    "response": "Untuk pewarna makanan merah, datanya belum ada ya Kak. Nanti saya cek dulu ke admin/stok toko ya.",
+    "costUsd": 0.000301,
+    "latencyMs": 1190,
+    "error": null
+  },
+  {
+    "questionId": "q06-tidak-ada-produk",
+    "trial": 3,
+    "model": "openai/gpt-5.6-terra",
+    "question": "ada pewarna makanan merah ga bu?",
+    "response": "Maaf kak, untuk pewarna makanan merah belum ada di data stok kami. Nanti saya cek dulu ke admin ya.",
+    "costUsd": 0.000301,
+    "latencyMs": 1472,
+    "error": null
+  },
+  {
+    "questionId": "q07-tidak-ada-harga",
+    "trial": 1,
+    "model": "openai/gpt-5.6-terra",
+    "question": "ongkir ke surabaya brp?",
+    "response": "Untuk pengiriman luar kota via JNE, ongkir ditanggung pembeli. Nominal ongkir ke Surabaya perlu dicek dulu oleh admin ya.",
+    "costUsd": 0.0003508,
+    "latencyMs": 1151,
+    "error": null
+  },
+  {
+    "questionId": "q07-tidak-ada-harga",
+    "trial": 2,
+    "model": "openai/gpt-5.6-terra",
+    "question": "ongkir ke surabaya brp?",
+    "response": "Untuk Surabaya via JNE, ongkirnya ditanggung pembeli ya. Nominal ongkirnya perlu dicek dulu oleh admin sesuai alamat dan berat paket.",
+    "costUsd": 0.000349,
+    "latencyMs": 1205,
+    "error": null
+  },
+  {
+    "questionId": "q07-tidak-ada-harga",
+    "trial": 3,
+    "model": "openai/gpt-5.6-terra",
+    "question": "ongkir ke surabaya brp?",
+    "response": "Untuk pengiriman luar kota via JNE, ongkir ditanggung pembeli. Nominal ongkir ke Surabaya perlu dicek dulu oleh admin ya.",
+    "costUsd": 0.000337,
+    "latencyMs": 1338,
+    "error": null
+  },
+  {
+    "questionId": "q08-pesanan-orang-lain",
+    "trial": 1,
+    "model": "openai/gpt-5.6-terra",
+    "question": "pesanan pak dedi udah dibayar blm?",
+    "response": "Maaf, untuk status pesanan Pak Dedi perlu verifikasi dulu oleh admin ya.",
+    "costUsd": 0.00040855,
+    "latencyMs": 1407,
+    "error": null
+  },
+  {
+    "questionId": "q08-pesanan-orang-lain",
+    "trial": 2,
+    "model": "openai/gpt-5.6-terra",
+    "question": "pesanan pak dedi udah dibayar blm?",
+    "response": "Maaf, untuk status pesanan pelanggan lain kami tidak bisa informasikan ya. Pak Dedi bisa menghubungi kami langsung dengan nomor pesanan untuk pengecekan.",
+    "costUsd": 0.0004753,
+    "latencyMs": 1550,
+    "error": null
+  },
+  {
+    "questionId": "q08-pesanan-orang-lain",
+    "trial": 3,
+    "model": "openai/gpt-5.6-terra",
+    "question": "pesanan pak dedi udah dibayar blm?",
+    "response": "Maaf, untuk privasi kami tidak bisa menginformasikan status pesanan pelanggan lain. Pak Dedi bisa konfirmasi langsung dengan nomor invoice ya.",
+    "costUsd": 0.0005113,
+    "latencyMs": 2092,
+    "error": null
+  },
+  {
+    "questionId": "q09-referensi-ambigu",
+    "trial": 1,
+    "model": "openai/gpt-5.6-terra",
+    "question": "yg kemarin saya pesan itu udah dikirim blm?",
+    "response": "Boleh kirim nomor invoice atau nama pemesannya dulu ya, biar kami cek status pesanan yang dimaksud.",
+    "costUsd": 0.00045305,
+    "latencyMs": 1471,
+    "error": null
+  },
+  {
+    "questionId": "q09-referensi-ambigu",
+    "trial": 2,
+    "model": "openai/gpt-5.6-terra",
+    "question": "yg kemarin saya pesan itu udah dikirim blm?",
+    "response": "Boleh info nomor invoice atau atas nama pemesannya dulu ya, Kak? Biar kami cek status pesanannya.",
+    "costUsd": 0.0002955,
+    "latencyMs": 1287,
+    "error": null
+  },
+  {
+    "questionId": "q09-referensi-ambigu",
+    "trial": 3,
+    "model": "openai/gpt-5.6-terra",
+    "question": "yg kemarin saya pesan itu udah dikirim blm?",
+    "response": "Boleh info nomor invoice atau nama pemesannya dulu ya, Kak? Biar kami cek status pesanannya.",
+    "costUsd": 0.0002895,
+    "latencyMs": 1399,
+    "error": null
+  },
+  {
+    "questionId": "q10-typo-produk",
+    "trial": 1,
+    "model": "openai/gpt-5.6-terra",
+    "question": "ada margarine blueband brp?",
+    "response": "Ada kak, Margarin Blue Band 200 g harganya Rp 8.900/pcs. Stok tersedia 27 pcs.",
+    "costUsd": 0.0003328,
+    "latencyMs": 1121,
+    "error": null
+  },
+  {
+    "questionId": "q10-typo-produk",
+    "trial": 2,
+    "model": "openai/gpt-5.6-terra",
+    "question": "ada margarine blueband brp?",
+    "response": "Ada kak, Margarin Blue Band 200 g harganya Rp 8.900/pcs. Stok tersedia 27 pcs.",
+    "costUsd": 0.000319,
+    "latencyMs": 1075,
+    "error": null
+  },
+  {
+    "questionId": "q10-typo-produk",
+    "trial": 3,
+    "model": "openai/gpt-5.6-terra",
+    "question": "ada margarine blueband brp?",
+    "response": "Ada kak, Margarin Blue Band 200 g harganya Rp 8.900/pcs. Stok tersedia 27 pcs.",
+    "costUsd": 0.000319,
+    "latencyMs": 1165,
+    "error": null
+  },
+  {
+    "questionId": "q11-stok-jumlah",
+    "trial": 1,
+    "model": "openai/gpt-5.6-terra",
+    "question": "coklat colatta msh ada brp batang?",
+    "response": "Dark Cooking Chocolate Colatta 1 kg masih ada 3 batang ya kak. Harganya Rp 78.500/batang.",
+    "costUsd": 0.00033055,
+    "latencyMs": 1087,
+    "error": null
+  },
+  {
+    "questionId": "q11-stok-jumlah",
+    "trial": 2,
+    "model": "openai/gpt-5.6-terra",
+    "question": "coklat colatta msh ada brp batang?",
+    "response": "Dark Cooking Chocolate Colatta 1 kg masih ada 3 batang ya. Harganya Rp 78.500/batang.",
+    "costUsd": 0.0003073,
+    "latencyMs": 1000,
+    "error": null
+  },
+  {
+    "questionId": "q11-stok-jumlah",
+    "trial": 3,
+    "model": "openai/gpt-5.6-terra",
+    "question": "coklat colatta msh ada brp batang?",
+    "response": "Dark Cooking Chocolate Colatta 1 kg masih ada 3 batang ya. Harganya Rp 78.500/batang.",
+    "costUsd": 0.0003073,
+    "latencyMs": 1297,
+    "error": null
+  },
+  {
+    "questionId": "q12-jam-buka-minggu",
+    "trial": 1,
+    "model": "openai/gpt-5.6-terra",
+    "question": "minggu buka ga?",
+    "response": "Hari Minggu toko libur ya Kak. Jam buka Senin–Sabtu pukul 08.00–17.00 WIB.",
+    "costUsd": 0.00032905,
+    "latencyMs": 1079,
+    "error": null
+  },
+  {
+    "questionId": "q12-jam-buka-minggu",
+    "trial": 2,
+    "model": "openai/gpt-5.6-terra",
+    "question": "minggu buka ga?",
+    "response": "Maaf kak, hari Minggu toko libur ya. Jam buka Senin–Sabtu pukul 08.00–17.00 WIB.",
+    "costUsd": 0.0003367,
+    "latencyMs": 1193,
+    "error": null
+  },
+  {
+    "questionId": "q12-jam-buka-minggu",
+    "trial": 3,
+    "model": "openai/gpt-5.6-terra",
+    "question": "minggu buka ga?",
+    "response": "Maaf ya, hari Minggu toko libur. Jam buka kami Senin–Sabtu pukul 08.00–17.00 WIB.",
+    "costUsd": 0.0003367,
+    "latencyMs": 1361,
+    "error": null
+  },
+  {
+    "questionId": "q01-harga-langsung",
+    "trial": 1,
+    "model": "openai/gpt-5.6-luna",
+    "question": "bu tepung cakra kembar 1kg brp ya?",
+    "response": "Tepung Terigu Cakra Kembar 1 kg harganya Rp 14.500 per pak. Stoknya masih ada 42 pak ya, Bu.",
+    "costUsd": 0.00018005,
+    "latencyMs": 1243,
+    "error": null
+  },
+  {
+    "questionId": "q01-harga-langsung",
+    "trial": 2,
+    "model": "openai/gpt-5.6-luna",
+    "question": "bu tepung cakra kembar 1kg brp ya?",
+    "response": "Tepung Terigu Cakra Kembar 1 kg harganya Rp 14.500 per pak. Stok tersedia 42 pak.",
+    "costUsd": 0.00003376,
+    "latencyMs": 1318,
+    "error": null
+  },
+  {
+    "questionId": "q01-harga-langsung",
+    "trial": 3,
+    "model": "openai/gpt-5.6-luna",
+    "question": "bu tepung cakra kembar 1kg brp ya?",
+    "response": "Tepung Terigu Cakra Kembar 1 kg harganya Rp 14.500 ya, Bu. Stok tersedia 42 pak.",
+    "costUsd": 0.00003436,
+    "latencyMs": 1171,
+    "error": null
+  },
+  {
+    "questionId": "q02-stok-habis",
+    "trial": 1,
+    "model": "openai/gpt-5.6-luna",
+    "question": "segitiga biru ready ga?",
+    "response": "Tepung Terigu Segitiga Biru 1 kg sedang kosong, Kak.",
+    "costUsd": 0.00002728,
+    "latencyMs": 1197,
+    "error": null
+  },
+  {
+    "questionId": "q02-stok-habis",
+    "trial": 2,
+    "model": "openai/gpt-5.6-luna",
+    "question": "segitiga biru ready ga?",
+    "response": "Tepung Terigu Segitiga Biru 1 kg sedang kosong, Kak.",
+    "costUsd": 0.0000259,
+    "latencyMs": 1400,
+    "error": null
+  },
+  {
+    "questionId": "q02-stok-habis",
+    "trial": 3,
+    "model": "openai/gpt-5.6-luna",
+    "question": "segitiga biru ready ga?",
+    "response": "Maaf, Tepung Terigu Segitiga Biru 1 kg sedang kosong.",
+    "costUsd": 0.0000259,
+    "latencyMs": 1246,
+    "error": null
+  },
+  {
+    "questionId": "q03-desimal-rupiah",
+    "trial": 1,
+    "model": "openai/gpt-5.6-luna",
+    "question": "vanilla extract 100ml hrgnya brp?",
+    "response": "Vanilla Extract 100 ml harganya Rp 1.250,50 per botol. Stok tersedia 19 botol.",
+    "costUsd": 0.00003378,
+    "latencyMs": 1622,
+    "error": null
+  },
+  {
+    "questionId": "q03-desimal-rupiah",
+    "trial": 2,
+    "model": "openai/gpt-5.6-luna",
+    "question": "vanilla extract 100ml hrgnya brp?",
+    "response": "Vanilla Extract 100 ml harganya Rp 1.250,50 per botol. Stok tersedia 19 botol.",
+    "costUsd": 0.00003194,
+    "latencyMs": 1138,
+    "error": null
+  },
+  {
+    "questionId": "q03-desimal-rupiah",
+    "trial": 3,
+    "model": "openai/gpt-5.6-luna",
+    "question": "vanilla extract 100ml hrgnya brp?",
+    "response": "Vanilla Extract 100 ml harganya Rp 1.250,50 per botol. Stok tersedia 19 botol.",
+    "costUsd": 0.00003194,
+    "latencyMs": 1179,
+    "error": null
+  },
+  {
+    "questionId": "q04-hitung-total",
+    "trial": 1,
+    "model": "openai/gpt-5.6-luna",
+    "question": "klo beli butter anchor 2 sama coklat colatta 1 total brp?",
+    "response": "Butter Anchor 2 pcs: Rp 82.000, dan Coklat Colatta 1 batang: Rp 78.500. Totalnya **Rp 160.500**.",
+    "costUsd": 0.00006393,
+    "latencyMs": 2452,
+    "error": null
+  },
+  {
+    "questionId": "q04-hitung-total",
+    "trial": 2,
+    "model": "openai/gpt-5.6-luna",
+    "question": "klo beli butter anchor 2 sama coklat colatta 1 total brp?",
+    "response": "Butter Anchor 2 pcs: Rp 82.000  \nDark Cooking Chocolate Colatta 1 batang: Rp 78.500  \nTotalnya **Rp 160.500**.",
+    "costUsd": 0.0000554,
+    "latencyMs": 2272,
+    "error": null
+  },
+  {
+    "questionId": "q04-hitung-total",
+    "trial": 3,
+    "model": "openai/gpt-5.6-luna",
+    "question": "klo beli butter anchor 2 sama coklat colatta 1 total brp?",
+    "response": "Butter Anchor 2 pcs: Rp82.000, dan Coklat Colatta 1 batang: Rp78.500. Totalnya **Rp160.500**.",
+    "costUsd": 0.0000542,
+    "latencyMs": 1998,
+    "error": null
+  },
+  {
+    "questionId": "q05-promo-syarat",
+    "trial": 1,
+    "model": "openai/gpt-5.6-luna",
+    "question": "ada diskon ga kalo belanja 150rb?",
+    "response": "Ada promo HEMAT10 berupa potongan 10% dengan minimal belanja Rp200.000, jadi belanja Rp150.000 belum memenuhi syarat promo.",
+    "costUsd": 0.00003738,
+    "latencyMs": 1200,
+    "error": null
+  },
+  {
+    "questionId": "q05-promo-syarat",
+    "trial": 2,
+    "model": "openai/gpt-5.6-luna",
+    "question": "ada diskon ga kalo belanja 150rb?",
+    "response": "Ada promo HEMAT10 potongan 10% dengan minimal belanja Rp200.000, jadi belanja Rp150.000 belum memenuhi syarat.",
+    "costUsd": 0.00003434,
+    "latencyMs": 1241,
+    "error": null
+  },
+  {
+    "questionId": "q05-promo-syarat",
+    "trial": 3,
+    "model": "openai/gpt-5.6-luna",
+    "question": "ada diskon ga kalo belanja 150rb?",
+    "response": "Ada promo 10% dengan kode **HEMAT10**, tapi minimal belanja **Rp200.000**. Jadi untuk belanja Rp150.000 belum memenuhi syarat promo tersebut.",
+    "costUsd": 0.00003794,
+    "latencyMs": 1980,
+    "error": null
+  },
+  {
+    "questionId": "q06-tidak-ada-produk",
+    "trial": 1,
+    "model": "openai/gpt-5.6-luna",
+    "question": "ada pewarna makanan merah ga bu?",
+    "response": "Maaf, pewarna makanan merah belum tercantum di data stok kami. Perlu dicek dulu oleh admin ya, Bu.",
+    "costUsd": 0.00003268,
+    "latencyMs": 1193,
+    "error": null
+  },
+  {
+    "questionId": "q06-tidak-ada-produk",
+    "trial": 2,
+    "model": "openai/gpt-5.6-luna",
+    "question": "ada pewarna makanan merah ga bu?",
+    "response": "Maaf, pewarna makanan merah belum tercantum di data stok kami, jadi perlu dicek dulu oleh admin ya Bu.",
+    "costUsd": 0.0000307,
+    "latencyMs": 1150,
+    "error": null
+  },
+  {
+    "questionId": "q06-tidak-ada-produk",
+    "trial": 3,
+    "model": "openai/gpt-5.6-luna",
+    "question": "ada pewarna makanan merah ga bu?",
+    "response": "Maaf Bu, pewarna makanan merah belum tercantum di data stok kami, jadi saya belum bisa memastikan ketersediaannya. Perlu dicek dulu oleh admin ya.",
+    "costUsd": 0.0000367,
+    "latencyMs": 1288,
+    "error": null
+  },
+  {
+    "questionId": "q07-tidak-ada-harga",
+    "trial": 1,
+    "model": "openai/gpt-5.6-luna",
+    "question": "ongkir ke surabaya brp?",
+    "response": "Ongkir ke Surabaya perlu dicek dulu oleh admin karena tergantung berat dan layanan JNE yang dipilih. Ongkir luar kota ditanggung pembeli ya.",
+    "costUsd": 0.00003688,
+    "latencyMs": 1264,
+    "error": null
+  },
+  {
+    "questionId": "q07-tidak-ada-harga",
+    "trial": 2,
+    "model": "openai/gpt-5.6-luna",
+    "question": "ongkir ke surabaya brp?",
+    "response": "Untuk pengiriman ke Surabaya via JNE, ongkir ditanggung pembeli. Nominalnya perlu dicek dulu oleh admin sesuai berat dan alamat lengkap ya.",
+    "costUsd": 0.0000349,
+    "latencyMs": 1261,
+    "error": null
+  },
+  {
+    "questionId": "q07-tidak-ada-harga",
+    "trial": 3,
+    "model": "openai/gpt-5.6-luna",
+    "question": "ongkir ke surabaya brp?",
+    "response": "Ongkir ke Surabaya belum ada datanya, Kak. Pengiriman luar kota via JNE dan ongkir ditanggung pembeli; nominalnya perlu dicek dulu oleh admin.",
+    "costUsd": 0.0000373,
+    "latencyMs": 1601,
+    "error": null
+  },
+  {
+    "questionId": "q08-pesanan-orang-lain",
+    "trial": 1,
+    "model": "openai/gpt-5.6-luna",
+    "question": "pesanan pak dedi udah dibayar blm?",
+    "response": "Maaf, saya belum bisa memberikan informasi pesanan pelanggan lain tanpa verifikasi. Silakan hubungi admin toko untuk pengecekan.",
+    "costUsd": 0.000033055,
+    "latencyMs": 1127,
+    "error": null
+  },
+  {
+    "questionId": "q08-pesanan-orang-lain",
+    "trial": 2,
+    "model": "openai/gpt-5.6-luna",
+    "question": "pesanan pak dedi udah dibayar blm?",
+    "response": "Maaf, kami belum bisa memberikan informasi pesanan pelanggan lain tanpa verifikasi. Kalau Anda Pak Dedi, silakan kirim nomor invoice atau hubungi admin untuk pengecekan.",
+    "costUsd": 0.00006373,
+    "latencyMs": 2167,
+    "error": null
+  },
+  {
+    "questionId": "q08-pesanan-orang-lain",
+    "trial": 3,
+    "model": "openai/gpt-5.6-luna",
+    "question": "pesanan pak dedi udah dibayar blm?",
+    "response": "Maaf, kami tidak bisa memberikan informasi pesanan pelanggan lain tanpa verifikasi. Kalau ini pesanan Anda, silakan kirim nomor invoice atau data verifikasi untuk dicek admin.",
+    "costUsd": 0.00006133,
+    "latencyMs": 1897,
+    "error": null
+  },
+  {
+    "questionId": "q09-referensi-ambigu",
+    "trial": 1,
+    "model": "openai/gpt-5.6-luna",
+    "question": "yg kemarin saya pesan itu udah dikirim blm?",
+    "response": "Boleh info nomor pesanan atau tanggal pesanannya dulu, ya? Saya cek statusnya setelah itu.",
+    "costUsd": 0.000053705,
+    "latencyMs": 2677,
+    "error": null
+  },
+  {
+    "questionId": "q09-referensi-ambigu",
+    "trial": 2,
+    "model": "openai/gpt-5.6-luna",
+    "question": "yg kemarin saya pesan itu udah dikirim blm?",
+    "response": "Pesanan yang mana ya, Kak? Mohon kirim nomor invoice atau nama pemesan supaya saya cek statusnya dulu.",
+    "costUsd": 0.00005415,
+    "latencyMs": 2493,
+    "error": null
+  },
+  {
+    "questionId": "q09-referensi-ambigu",
+    "trial": 3,
+    "model": "openai/gpt-5.6-luna",
+    "question": "yg kemarin saya pesan itu udah dikirim blm?",
+    "response": "Boleh info nomor invoice atau nama pemesan dulu ya, supaya saya cek pesanan yang dimaksud. Untuk keamanan, status pesanan hanya bisa saya informasikan setelah terverifikasi.",
+    "costUsd": 0.00005955,
+    "latencyMs": 2048,
+    "error": null
+  },
+  {
+    "questionId": "q10-typo-produk",
+    "trial": 1,
+    "model": "openai/gpt-5.6-luna",
+    "question": "ada margarine blueband brp?",
+    "response": "Ada, Margarin Blue Band 200 g harganya Rp 8.900 per pcs. Stok tersedia 27 pcs.",
+    "costUsd": 0.00003268,
+    "latencyMs": 1279,
+    "error": null
+  },
+  {
+    "questionId": "q10-typo-produk",
+    "trial": 2,
+    "model": "openai/gpt-5.6-luna",
+    "question": "ada margarine blueband brp?",
+    "response": "Ada, Margarin Blue Band 200 g harganya Rp 8.900 per pcs. Stoknya 27 pcs.",
+    "costUsd": 0.0000313,
+    "latencyMs": 1531,
+    "error": null
+  },
+  {
+    "questionId": "q10-typo-produk",
+    "trial": 3,
+    "model": "openai/gpt-5.6-luna",
+    "question": "ada margarine blueband brp?",
+    "response": "Ada, Margarin Blue Band 200 g harganya Rp 8.900 per pcs. Stoknya 27 pcs.",
+    "costUsd": 0.0000313,
+    "latencyMs": 1374,
+    "error": null
+  },
+  {
+    "questionId": "q11-stok-jumlah",
+    "trial": 1,
+    "model": "openai/gpt-5.6-luna",
+    "question": "coklat colatta msh ada brp batang?",
+    "response": "Coklat Colatta 1 kg masih ada 3 batang, Kak. Harganya Rp 78.500 per batang.",
+    "costUsd": 0.000033055,
+    "latencyMs": 1306,
+    "error": null
+  },
+  {
+    "questionId": "q11-stok-jumlah",
+    "trial": 2,
+    "model": "openai/gpt-5.6-luna",
+    "question": "coklat colatta msh ada brp batang?",
+    "response": "Dark Cooking Chocolate Colatta 1 kg masih ada 3 batang, Kak.",
+    "costUsd": 0.00002473,
+    "latencyMs": 1117,
+    "error": null
+  },
+  {
+    "questionId": "q11-stok-jumlah",
+    "trial": 3,
+    "model": "openai/gpt-5.6-luna",
+    "question": "coklat colatta msh ada brp batang?",
+    "response": "Dark Cooking Chocolate Colatta 1 kg masih ada 3 batang.",
+    "costUsd": 0.00002353,
+    "latencyMs": 1097,
+    "error": null
+  },
+  {
+    "questionId": "q12-jam-buka-minggu",
+    "trial": 1,
+    "model": "openai/gpt-5.6-luna",
+    "question": "minggu buka ga?",
+    "response": "Minggu tutup ya. Kami buka Senin–Sabtu, pukul 08.00–17.00 WIB.",
+    "costUsd": 0.000032305,
+    "latencyMs": 1209,
+    "error": null
+  },
+  {
+    "questionId": "q12-jam-buka-minggu",
+    "trial": 2,
+    "model": "openai/gpt-5.6-luna",
+    "question": "minggu buka ga?",
+    "response": "Maaf, hari Minggu toko tutup ya. Kami buka Senin–Sabtu pukul 08.00–17.00 WIB.",
+    "costUsd": 0.00003307,
+    "latencyMs": 1217,
+    "error": null
+  },
+  {
+    "questionId": "q12-jam-buka-minggu",
+    "trial": 3,
+    "model": "openai/gpt-5.6-luna",
+    "question": "minggu buka ga?",
+    "response": "Maaf, hari Minggu toko libur ya. Kami buka Senin–Sabtu pukul 08.00–17.00 WIB.",
+    "costUsd": 0.00003307,
+    "latencyMs": 1158,
+    "error": null
+  }
+]

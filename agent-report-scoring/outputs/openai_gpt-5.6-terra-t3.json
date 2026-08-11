@@ -1,0 +1,30 @@
+{
+  "label": "openai/gpt-5.6-terra trial 3",
+  "model": "openai/gpt-5.6-terra",
+  "trial": 3,
+  "costUsd": 0.0133999,
+  "latencyMs": 24372,
+  "error": null,
+  "finishReason": "stop",
+  "meta": {
+    "summary": "{\"cards\":[{\"category\":\"reliability\",\"title\":\"Severe error concentration at hour 14\",\"detail\":\"Hour 14 recorded 1,460 errors in 9,225 requests, a 15.8% error rate and 67.3% of all 2,169 weekly errors. The other hours combined had 709 errors in 195,768 requests, a 0.36% rate; investigate traffic, routing, or deployments associated with hour 14.\"},{\"category\":\"cost\",\"title\":\"caller-07 has an outsized",
+    "publish_result": "not_configured"
+  },
+  "cards": [
+    {
+      "category": "reliability",
+      "title": "Severe error concentration at hour 14",
+      "detail": "Hour 14 recorded 1,460 errors in 9,225 requests, a 15.8% error rate and 67.3% of all 2,169 weekly errors. The other hours combined had 709 errors in 195,768 requests, a 0.36% rate; investigate traffic, routing, or deployments associated with hour 14."
+    },
+    {
+      "category": "cost",
+      "title": "caller-07 has an outsized cost per request",
+      "detail": "caller-07 spent $174.12 on 1,180 requests, or $0.148 per request, versus $0.016 across all 204,993 requests. It accounts for 5.2% of weekly spend while generating 0.6% of requests; review its model selection and request characteristics."
+    },
+    {
+      "category": "usage",
+      "title": "Low-cache callers handle 44,955 requests",
+      "detail": "The 12 callers with cache-hit rates from 0% to 8.9% generated 44,955 requests and had a weighted 6.6% cache-hit rate. The remaining 160,038 requests had a weighted 86.7% cache-hit rate, indicating a substantial cache configuration or workload-pattern gap."
+    }
+  ]
+}

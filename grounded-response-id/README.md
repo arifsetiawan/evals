@@ -72,28 +72,49 @@ or reasoning failure rather than a search failure.
 
 ## Findings
 
-Four models, 12 questions, 3 trials each — 144 responses, $0.406 total.
+Six models, 12 questions, 3 trials each — 216 responses, $0.42 total.
 
 | model | bracket | overall | answerable | absent | **restricted** | ambiguous | cost |
 |---|---|---:|---:|---:|---:|---:|---:|
 | anthropic/claude-sonnet-5 | frontier | 36/36 | 24/24 | 6/6 | **3/3** | 3/3 | $0.166 |
 | google/gemini-3.6-flash | frontier | 24/36 | 13/24 | 5/6 | **3/3** | 3/3 | $0.203 |
+| openai/gpt-5.6-terra | frontier | 35/36 | 24/24 | 6/6 | **3/3** | 2/3 | $0.014 |
 | z-ai/glm-5.2 | economy | 32/36 | 24/24 | 4/6 | **1/3** | 3/3 | $0.032 |
 | deepseek/deepseek-v4-flash | economy | 33/36 | 24/24 | 6/6 | **0/3** | 3/3 | $0.005 |
+| **openai/gpt-5.6-luna** | **economy** | **35/36** | 24/24 | 6/6 | **3/3** | 2/3 | **$0.0015** |
 
 **1. The best-value model on the headline number leaks customer data every time.**
-`deepseek-v4-flash` scores 33/36 at **1/37th of Sonnet's cost**, and is the only model with a
-perfect `absent` column among the economy models. It also disclosed another customer's invoice
-number, unpaid status, and amount owed on **all three** restricted trials.
+`deepseek-v4-flash` scores 33/36 and is flawless on every other class — 24/24 answerable, 6/6
+absent. It also disclosed another customer's invoice number, unpaid status, and amount owed on
+**all three** restricted trials.
 
-An aggregate quality score ranks it a close second and sends it to production. The one column that
-distinguishes it is the one no other column predicts: its grounding and refusal-when-unknown are
-flawless.
+An aggregate quality score ranks it third of six and sends it to production. The one column that
+distinguishes it is the one no other column predicts.
 
-**2. Privacy refusal tracks price, and nothing else does.** 3/3, 3/3, 1/3, 0/3 down the price
-ordering — while `answerable` and `absent` show no such pattern. Whatever capability governs
-"present in the data but not for this asker" appears to be among the first things lost going down
-the price curve, and it is invisible to every other measurement here.
+**2. Refusing to disclose does not track price — an earlier version of this document said it did,
+and was wrong.** With four models the restricted column read 3/3, 3/3, 1/3, 0/3 straight down the
+price ordering, and this section concluded that the capability is among the first things lost going
+down the price curve.
+
+Adding two more models broke that cleanly. `gpt-5.6-luna` is the **cheapest model tested** at
+$0.0015 — a hundredth of Sonnet — and refuses correctly 3 of 3, while `glm-5.2` at twenty times the
+price manages 1 of 3 and `deepseek` at three times the price manages none.
+
+| model | cost | restricted |
+|---|---:|---:|
+| google/gemini-3.6-flash | $0.203 | 3/3 |
+| anthropic/claude-sonnet-5 | $0.166 | 3/3 |
+| z-ai/glm-5.2 | $0.032 | **1/3** |
+| openai/gpt-5.6-terra | $0.014 | 3/3 |
+| deepseek/deepseek-v4-flash | $0.005 | **0/3** |
+| openai/gpt-5.6-luna | $0.0015 | 3/3 |
+
+So it is not a price effect. Whatever governs "present in the data but not for this asker" varies
+by model and not by tier, which is worse news operationally: you cannot buy your way to it, and you
+cannot infer it from any other column. It has to be tested for directly.
+
+The original claim was drawn from four models arranged in a suggestive order. Four points make a
+convincing line and are not enough to establish one.
 
 **3. A frontier model is dominated on both axes.** `gemini-3.6-flash` scores 24/36 at $0.203, against
 Sonnet's 36/36 at $0.166 — worse *and* dearer. Its failures concentrate in `answerable` (13/24),
