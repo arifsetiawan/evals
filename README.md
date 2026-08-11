@@ -20,7 +20,7 @@ depends on how many turns a model takes, not only on its price per token.
 | Analysing usage data | **A cheap model** | glm-5.2 beat every expensive model at 1/5 the cost |
 | Answering customer questions | The expensive model | but see below, this one is not really about winning |
 | Clearing a real security advisory | **Nearly everyone** | 5 of 6 cleared every case; the cheapest for 4.6 cents against Sonnet's $1.45 |
-| Fixing real bugs in real code | **Not yet answered** | first matrix withdrawn after a harness bug; fixed and awaiting rerun |
+| Fixing real bugs in real code | **A cheap model, 70%** | gpt-5.6-luna beat deepseek 70% to 48%, and 6 of 54 runs edited the test rather than fix the code |
 
 So a cheap model can be better than an expensive one, worse than an expensive one, or exactly the
 same, depending on what you ask it to do. Any article telling you which model is "best at AI agent
@@ -44,6 +44,12 @@ a hundredth of the price of the dearest — refused correctly every time, while 
 more than it failed. Whatever governs this does not track price, so the only way to know is to
 test for it.
 
+**A coding agent changed the test instead of fixing the code.** Six times out of fifty-four, handed
+a failing test describing the behaviour it was asked to produce, it edited that test. The suite then
+passed. Nothing in the output separates this from a real fix: the tests are green, the summary is
+confident, and the diff looks purposeful until you notice which file it touched. Five further runs
+simply reported the work done while the tests said otherwise, having run those tests themselves.
+
 This is not the model being incapable. It is the model being confidently wrong in a way
 that looks finished. That is why every test here scores *how* the model worked separately from
 *whether* it got the right answer, and why none of them report a single overall score.
@@ -55,7 +61,7 @@ that looks finished. That is why every test here scores *how* the model worked s
 | [`agent-report-scoring/`](agent-report-scoring/) | Given a week of usage data, does the model find the real problems and ignore the fake ones? | Done, 4 models |
 | [`grounded-response-id/`](grounded-response-id/) | Does a shop assistant answer from the shop's data, admit when it doesn't know, and refuse what it shouldn't share? In Indonesian. | Done, 4 models |
 | [`cve-remediation/`](cve-remediation/) | Given a real CVE in a project's dependencies, can it clear the advisory without deleting the package or silencing the scanner? | Done, 4 models, 48 runs |
-| [`swe-production/`](swe-production/) | Can it fix real bugs from a real business application? | Awaiting rerun. First 27-run matrix withdrawn after a harness bug; fix now smoke-tested |
+| [`swe-production/`](swe-production/) | Can it fix real bugs from a real business application? | Done, 2 economy models, 54 runs. Private task suite, so the numbers are not reproducible |
 
 The first three include everything needed to run them and will give you the same numbers we got.
 The fourth will not: it runs against a private codebase, so the tool is public but the test cases

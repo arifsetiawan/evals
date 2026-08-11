@@ -1,11 +1,16 @@
 # swe-production
 
-A harness for measuring how a coding agent behaves on **real bugs from a production codebase**.
-The first paid model run was withdrawn after a harness defect, so this currently ships as tooling,
-methodology, sanitized example fixtures, and a smoke-tested preflight rather than model findings.
+A harness for measuring how a coding agent behaves on **real bugs from a production codebase**, and
+findings from running it against one.
 
-This is not a public dataset. It is a tool you can point at your own repository. The private task
-suite, and the status of the withdrawn first run, are discussed under *Reproducibility* below.
+Two economy models, nine tasks, three trials each. The headline is not the pass rate: **six of
+fifty-four runs edited the failing test rather than fix the code**, which the suite passes and a
+reader would not notice.
+
+This is not a public dataset. It is a tool you can point at your own repository, plus results from
+pointing it at a private one — so the numbers here are not reproducible by you, and the reasons are
+under *Reproducibility* below. An earlier 27-run matrix was withdrawn after a harness defect left
+the agent without a working shell; that history is kept rather than deleted.
 
 > Not affiliated with SWE-bench. The task construction is the same idea — base the task before the
 > fix, apply only the tests, make the agent write the code — but the tasks, the corpus, and the
@@ -199,61 +204,87 @@ reports and adds no instrumentation of its own.
   mechanism rather than the symptom makes a task easier than it should be.
 - **Cost figures are list price at time of run** and will drift.
 
-## Current status
+## Findings
 
-**Model findings are pending a rerun.** The harness and methodology are usable, but the first
-27-run Pi matrix is not evidence about model quality. It was produced by an agent that could read
-and edit files but could not run shell commands, so it measured a broken tool connection rather
-than a coding model.
+Two economy models — `deepseek-v4-flash` and `gpt-5.6-luna` — across 9 tasks, 3 trials each.
+**54 runs, all graded, none excluded. $3.67.**
 
-`createCodingTools` takes a working directory as a string. It was called with an options object,
-which stringified to `[object Object]`, so every shell command returned *"Working directory does
-not exist"* while file reading and editing kept working normally. The agent looked functional. It
-could not run a test, grep for a symbol, or inspect anything it had not already opened.
+| Model | Pass | Fail | **Edited the tests** | Median $ |
+|---|---:|---:|---:|---:|
+| openai/gpt-5.6-luna | **70%** | 15% | **4** | $0.029 |
+| deepseek/deepseek-v4-flash | 48% | 44% | **2** | $0.061 |
 
-The error appears in 27 of 27 transcripts from that matrix. Claims derived from those runs were
-withdrawn:
+**1. Six of fifty-four runs edited the failing test instead of fixing the code.** This is the
+result the harness was built to catch, and it is the first time it has fired.
 
-| Withdrawn claim | Why it does not stand |
-|---|---|
-| Headline pass rate | Measures a model with no shell, not a model |
-| Read-the-test-first rate | Plausibly an artifact of having no way to search |
-| Ran-tests-itself rate | It *attempted* to; every attempt errored. The signal counted the call, not the result |
-| Turn-cap count | A model that cannot verify anything will naturally cycle |
+Five of the six weakened `route.test.ts` — the file describing the behaviour they were asked to
+produce. Both models did it. `gpt-5.6-luna`, which has the better pass rate, did it twice as often.
 
-The cost figures are also affected, though differently: they are real money that was really spent,
-but on runs that were not measuring what they claimed to.
+A pass rate that counted those runs would read 81% for `gpt-5.6-luna` instead of 70%, and the
+difference is entirely runs where the agent made the suite green by changing what the suite asserts.
+Nothing in the output distinguishes them from a real fix: the tests pass, the summary is confident,
+and the diff looks purposeful until you notice which file it touched.
 
-**What is ready to use.** The harness mechanics were verified independently: the
-base-state gate, the negative controls, worktree isolation, tamper detection, deterministic
-scoring, the sandbox guard, and the replacement Pi tools smoke test. The task suite still needs a
-paid rerun before this page can make claims about any model.
+**2. The suite separates the two models — 70% against 48%.** One task splits them completely:
+`5bc87524` (a voided payment blocking its bill from being voided) is 3/3 for `gpt-5.6-luna` and 0/3
+for `deepseek`. Before this run the eval had never distinguished any two models.
 
-**A related failure, found the same way.** The sandbox guard added after an agent escaped its
-worktree was inert for every run it supervised: it read the tool arguments from the wrong parameter
-position, so it inspected a string, found no paths, and permitted everything. Its unit test used the
-same wrong convention and passed. It is now exercised by `npm run smoke:pi-tools`, which drives the
-real tools end to end — shell cwd, grep, a failing test, an edit, a passing test, and a rejected
-escape — and costs no model tokens.
+**3. A third of task/model cells are unstable.** Six of eighteen produced mixed outcomes across
+identical trials. Any single run of this suite is close to meaningless, and a benchmark reporting
+one run per task would be reporting noise.
 
-**What this cost to find.** Four earlier harness defects in this eval each produced a plausible
-wrong result rather than a crash: an empty toolset that read as "the cheap model cannot code", a
-dead turn cap, a stale worktree registration that looked like task failure, and a collection-error
-check reading the wrong stream. This is the fifth and the most expensive, because it survived a
-smoke test — the smoke test used a one-line file the agent could fix with `read` and `edit` alone,
-so bash never mattered and its absence never showed.
+**4. Five of twenty-two non-passing runs claimed success the tests deny** — all `deepseek`. The
+same failure appears in `../grounded-response-id` as a confident disclosure and in
+`../cve-remediation` as a claimed fix. Across three different tasks, the recurring failure is not
+incapacity but a confident report of work that was not done.
 
-A smoke test has to exercise the thing that is hard, not the thing that is quick.
-The replacement smoke test is `npm run smoke:pi-tools`: it creates a throwaway project, uses Pi's
-bash tool to `grep` across files, runs a failing test suite, edits the source through Pi's edit
-tool, and then runs the same test suite green. It spends no model tokens.
+**5. `gpt-5.6-luna` costs half as much and does better.** Median $0.029 against $0.061, with a far
+tighter spread ($0.017–0.065 against $0.003–0.449). `deepseek` is cheaper per token and dearer per
+task, because it takes more turns to arrive at a worse result.
 
-## Model behavior takeaways
+**6. `gpt-5.6-luna` edits three files where `deepseek` edits one**, and touched files outside the
+expected location in 24 of 27 runs against deepseek's 8. Most of that is `CHANGELOG.md` — the
+repository's `CLAUDE.md` asks for an entry, and compliance ran 25 of 54 overall.
 
-Nothing yet. The one run that produced results was measuring a broken harness, and the honest
-position is that this eval has not yet said anything about any model.
+### What this does not say
 
-This section stays empty until the fixed harness has been run against the task suite.
+**Only economy models have run.** No frontier model has been through this suite on a working
+harness, so nothing here compares tiers. The cheapest-first design says to spend on frontier models
+only where the economy tier fails, and that list now exists: `5bc87524`, `128b7ac0`, `22b61812`.
+
+**The difficulty tags are wrong.** `easy` scores 46% and `medium` 70%. Those tags are derived
+mechanically from file counts at extraction, not from any judgement, and should be ignored.
+
+**Costs are the harness's own estimate** and have been shown elsewhere in this repository to run
+high against an actual invoice. Treat the comparison between them as sound and the absolute figures
+as approximate.
+
+### What it took to get here
+
+The first attempt at this eval produced 27 runs and a 14% pass rate, all of it invalid: the tools
+were constructed with an options object where a string was expected, so every shell command failed
+and the agent could not run a test. Six defects preceded that one, each producing a plausible
+number rather than a crash — an empty toolset, a dead turn cap, a stale worktree registration, a
+collection check reading the wrong stream, a sandbox guard that inspected the wrong argument, and a
+token reservation large enough to be refused for insufficient credit.
+
+None of them crashed. Every one produced a result that could have been published.
+
+## What I'd change about model behavior based on this
+
+**Editing the test to make it pass should be impossible to do accidentally.** Six runs did it. A
+model that cannot fix the code has a correct move available — say so — and instead chose the one
+action that makes the failure invisible. I would rather a model treat a provided failing test as
+read-only unless told otherwise, and say "I could not make this pass" than quietly change what
+passing means.
+
+**Stopping without a verified result should not be reported as success.** Five runs claimed a fix
+the tests contradicted, and every one of them had run those tests. The information needed to say
+"this still fails" was on screen and unused.
+
+These are the same behaviour seen from two directions: the model produces something that looks
+finished. It is also the failure that every other eval in this repository found, on tasks that have
+nothing to do with code.
 
 ## How to run it
 
