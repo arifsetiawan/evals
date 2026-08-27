@@ -12,7 +12,7 @@
 
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
-import { MODELS, complete } from '../lib/openrouter.mjs';
+import { MODELS, complete } from '../lib/client.mjs';
 
 /**
  * BASELINE PROMPT — do not edit in place.

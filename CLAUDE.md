@@ -159,24 +159,104 @@ If the harness is built and unrun, the README says exactly that.
 
 ## Layout
 
+Two shapes, because two kinds of eval live here. Pick by whether the model needs tools.
+
+**Single-turn** — the model is handed data and asked for one answer. No tools, no agent loop, so a
+plain completion isolates the thing being measured. Three of the four evals are this shape.
+
 ```
 <eval-name>/
-├── README.md      # the deliverable
-├── tasks/         # task or case definitions, declarative
-├── harness/       # runner
-├── results/       # raw outputs, committed, with run metadata
+├── README.md      # the deliverable (Rule 11)
+├── fixture/       # the frozen input the model sees (Rule 3)
+├── tasks/         # case definitions, declarative — a JSON file is enough
+├── outputs/       # raw run output, committed, one file per model per trial
+├── run.mjs        # asks each model every case
+└── score.mjs      # turns outputs into numbers, deterministically (Rule 4)
+```
+
+`golden/` appears too, where expected answers are large enough to want their own files rather than
+inline `expect_*` fields.
+
+**Agentic** — the model works in a loop with tools, so the scaffold is a variable in its own right
+and gets named and held fixed. `swe-production` is this shape.
+
+```
+<eval-name>/
+├── README.md
+├── fixtures/      # the repository or environment the agent works in
+├── tasks/         # task definitions
+├── harness/       # runner, scaffold adapters, pricing
+├── models.json    # models under test — adding one is config, not code
+├── results/       # raw run output, one directory per run, with metadata
 └── analysis/      # scripts turning results into the README's findings
 ```
 
+## Adding an eval
+
+The rules above are about judgment. This is the procedure.
+
+1. **Check it does not already exist** (METHODS.md §17). A variant of an existing eval is usually a
+   new case or a new condition in that folder, not a new folder.
+2. **Write the README first**, at least sections 1 and 2 of Rule 11 — what this measures, and how.
+   If you cannot state what a result would mean before running anything, the design is not ready.
+3. **Pick the layout** above and create the folder. Copy the closest existing eval; there is no
+   scaffold script and none is wanted, because copying a working one carries its conventions.
+4. **Freeze the fixture** and say in the README why it is frozen (Rule 3).
+5. **Write the cases declaratively.** A case is data, not code — see
+   `grounded-response-id/tasks/questions.json` for the shape: an `id`, a `class`, the input, the
+   expected behaviour, and a `tests` field saying *why this case exists*. That last field is what
+   stops a suite drifting into cases nobody can justify.
+6. **Include a negative control** (Rule 2) — at least one case whose correct outcome is failure.
+7. **Check what a lazy answer scores** (METHODS.md §3) before choosing a headline metric. If
+   "nothing is wrong" scores 80%, the metric is broken and no amount of running will fix it.
+8. **Score deterministically** (Rule 4). Reach for a judge model only when there is no alternative,
+   and then pin it and validate it.
+9. **Run at least three trials** and commit the raw outputs with their metadata (Rule 5).
+10. **Finish the README** — findings, limitations argued against yourself, and how to run it
+    (Rules 6, 7, 11).
+11. **Update `Current contents`** below. An eval nobody can find from the front door does not exist.
+
+Adding a **case** to an existing eval is step 5 plus step 9, and nothing else. Adding a **model** is
+an entry in `models.json` or `MODELS` in `lib/client.mjs` — configuration, not code.
+
+## Backends
+
+The single-turn evals speak the OpenAI chat-completions shape, so they are not tied to a provider.
+`EVAL_BACKEND` selects where calls go; the eval code never learns which is in use. Registry and
+per-backend model ids are in `lib/backends.mjs`, the client is `lib/client.mjs`, and the README
+documents the environment variables.
+
+Three constraints on that layer:
+
+- **OpenRouter stays the default.** Every published number came through it. Changing the route
+  silently would make a score difference unattributable to model, prompt, or gateway.
+- **No private endpoint is ever committed.** Gateway and self-hosted backends take their URL from
+  the environment. This is Rule 1 applied to configuration.
+- **Cost is reported only where the provider reports it.** Elsewhere `costUsd` is `null` with
+  `costSource: 'unavailable'` — never `0`, which would read as a free call.
+
+Temperature is not sent by default. The current model generation has retired it: the Claude 5
+family and the GPT-5.6 line reject any explicit value, while Claude 4.5, GPT-5.4 and the
+open-weight tier still accept one. Determinism comes from trials (Rule 5), not from pinning.
+
 ## Current contents
 
-| Folder | State |
-|---|---|
-| `swe-production/` | **Harness partially built, unrun.** SWE-bench-style suite; tasks extracted from real fix commits with their tests. No tasks written yet |
+| Folder | Shape | State |
+|---|---|---|
+| `agent-report-scoring/` | single-turn | **Done.** 4 models. Given a week of usage data, does the model find the real problems and ignore the planted decoys? |
+| `grounded-response-id/` | single-turn | **Done.** 4 models. Does a shop assistant answer from the shop's data, admit what it does not know, and refuse what it must not share? In Indonesian |
+| `cve-remediation/` | single-turn | **Done.** 4 models, 48 runs. Can it clear a real advisory without deleting the package or silencing the scanner? |
+| `swe-production/` | agentic | **Done.** 2 economy models, 9 tasks, 3 trials, 54 runs. Private task suite, so the numbers are not reproducible by a reader — the harness is public, the tasks are not |
+
+Keep this table current. It is the only place that says what state each eval is actually in, and
+Rule 12 applies to it as much as to a README.
 
 ## Conventions
 
 - Node ESM (`.mjs`), no build step, no framework
 - Commit raw results with metadata; never regenerate a committed result to make it look better
-- One folder per eval; no shared state between them
+- One folder per eval; no shared state between them, beyond `lib/`
 - Secrets via environment only, never committed, never in a fixture
+- **Baseline prompts are not edited in place.** Every published number was produced with the exact
+  prompt in the file. A variant is added as a new named condition with the original kept as the
+  control, so a score change is attributable to the prompt rather than confounded with it

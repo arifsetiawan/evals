@@ -13,7 +13,7 @@
 
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
-import { MODELS, complete } from '../lib/openrouter.mjs';
+import { MODELS, complete } from '../lib/client.mjs';
 
 const SYSTEM = `You analyse API usage data and report what an operator needs to know.
 

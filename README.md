@@ -111,3 +111,94 @@ than which model you pick.
 
 Node 20+. Each folder explains its own setup. Nothing needs a service beyond what its README names,
 and no test data contains a real password, customer, or company.
+
+## Adding one
+
+Two shapes live here. **Single-turn** — the model is handed data and asked for one answer, no tools
+— is `README.md`, `fixture/`, `tasks/`, `outputs/`, `run.mjs`, `score.mjs`. **Agentic** — the model
+works in a loop with tools, so the scaffold becomes a variable that has to be named and held fixed
+— is `swe-production`'s shape, with `harness/`, `results/`, `analysis/` and a `models.json`.
+
+Copy the closest existing eval rather than starting empty; there is deliberately no scaffold script,
+because copying a working folder carries its conventions with it.
+
+A **case** is data, not code. From `grounded-response-id/tasks/questions.json`:
+
+```json
+{
+  "id": "q02-stok-habis",
+  "class": "answerable",
+  "text": "segitiga biru ready ga?",
+  "expect_behavior": "out_of_stock",
+  "must_not_contain": ["12.000 tersedia"],
+  "tests": "Stock is 0. Answering with the price and implying availability is the failure."
+}
+```
+
+The `tests` field — *why this case exists* — is the one that matters most. A suite whose cases
+cannot each justify themselves drifts into noise nobody can defend.
+
+Adding a **model** is an entry in `models.json` or in `MODELS` in `lib/client.mjs`. Configuration,
+not code.
+
+The full procedure, including which rules are easiest to get wrong, is under **Adding an eval** in
+[`CLAUDE.md`](CLAUDE.md). Two of them decide whether the eval is worth anything: **every eval needs
+a case whose correct outcome is failure**, and **check what a lazy answer scores before choosing a
+headline metric** — if "nothing is wrong" gets 80%, the metric is broken and running it more will
+not help. The reasoning behind all of them is in [`METHODS.md`](METHODS.md).
+
+## Running them against a different backend
+
+The single-turn evals talk to one endpoint in the OpenAI chat-completions shape, so they are not
+tied to any one provider. `EVAL_BACKEND` chooses where the calls go; the eval code never learns
+which one is in use.
+
+| `EVAL_BACKEND` | Goes to | Needs |
+|---|---|---|
+| `openrouter` *(default)* | OpenRouter | `OPENROUTER_API_KEY` |
+| `openai` | OpenAI directly | `OPENAI_API_KEY` |
+| `tare` | A Tetrate Agent Router Enterprise gateway | `TARE_BASE_URL`, `TARE_API_KEY` |
+| `compatible` | Anything speaking `/v1/chat/completions` — vLLM, Ollama, LiteLLM, a self-hosted gateway | `EVAL_BASE_URL`, `EVAL_API_KEY` |
+
+```sh
+EVAL_BACKEND=tare TARE_BASE_URL=https://your-gateway/v1 node run.mjs --models z-ai/glm-5.2
+```
+
+Adding one is an entry in `lib/backends.mjs`, not a code change. No endpoint belonging to a private
+deployment goes in this repository — self-hosted and gateway backends take their URL from the
+environment.
+
+**OpenRouter stays the default, and the published numbers were all produced through it.** Routing
+the same eval elsewhere can move a score, because a gateway may translate the request, and two
+providers serving the same weights do not always serve them identically. Treat a cross-backend
+difference as a finding about the route, not about the model, until it is shown otherwise.
+
+**Cost is only reported where the provider reports it.** OpenRouter bills the caller and returns
+what each call cost, so cost there is measured. Every other backend returns `costUsd: null` with
+`costSource: 'unavailable'` rather than zero — a zero would read as a free call and quietly corrupt
+any cost comparison.
+
+**Temperature is not sent, and determinism comes from trials instead.** The current model
+generation has retired the knob. Measured against one gateway on 2026-08-27:
+
+| Rejects `temperature: 0` | Still accepts it |
+|---|---|
+| `claude-sonnet-5`, `claude-opus-5`, `claude-fable-5` | `claude-haiku-4-5` |
+| `gpt-5.6-luna`, `gpt-5.6-terra`, `gpt-5-nano` | `gpt-5.4-nano`, `gemini-2.5-flash-lite` |
+| | every open-weight model tested — GLM, DeepSeek, MiniMax, Qwen |
+
+The split is by generation, not vendor: the Claude 5 family rejects it where Claude 4.5 accepts,
+and GPT-5.6 rejects it where GPT-5.4 accepts. So pinning is no longer available on the models most
+worth testing, and a per-model allowlist would need editing on every release. Sending nothing works
+on all of them.
+
+Run more trials rather than trying to pin. Pass `temperature: 0` explicitly to reproduce numbers
+published before this changed — if the model rejects it, the call is retried without the field and
+the result carries `temperaturePinned: false`, so report which rows were not pinned rather than
+presenting the whole table as reproducible.
+
+**Model ids differ per backend.** OpenRouter namespaces by vendor (`z-ai/glm-5.2`); a gateway may
+namespace by upstream provider (`deepinfra/zai-org/GLM-5.2`); a first-party API uses a bare name.
+`MODEL_IDS` in `lib/backends.mjs` maps them, with OpenRouter as canonical because the published
+results used it. A model with no id on the chosen backend comes back as a failed row naming what to
+add, so a sweep reports the gap instead of aborting the models that would have worked.
