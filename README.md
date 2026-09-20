@@ -71,9 +71,17 @@ are not. That trade is explained in its own README.
 
 The full reasoning is in [`METHODS.md`](METHODS.md). The short version, in plain terms:
 
-**Include something that should fail.** Every test has at least one case where the correct outcome
-is failure. Without one, a perfect score might mean the model is perfect, or it might mean the
-scoring is broken and can never fail anything. You cannot tell which.
+**Include something that should fail.** A test needs at least one case where the correct outcome is
+failure. Without one, a perfect score might mean the model is perfect, or it might mean the scoring
+is broken and can never fail anything. You cannot tell which.
+
+Three of the four tests here have one: planted decoys in `agent-report-scoring`, the `absent` and
+`restricted` question classes in `grounded-response-id`, and two tasks whose correct outcome is
+rejection in `swe-production`. **`cve-remediation` does not.** The case built to be its negative
+control turned out to be solvable, and 70 of its 72 runs passed — so that suite's numbers are
+weaker than they look, which its own README says at length. It is listed here rather than quietly
+left out, because a summary that rounds three up to four is the same failure the rule exists to
+catch.
 
 **Check what a lazy answer would score.** If saying "nothing is wrong" to everything gets you 80%,
 then 80% is a meaningless number and the scoring needs rethinking before anything is published.
